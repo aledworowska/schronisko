@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+>
+<head>
+    <meta charset="UTF-8">
+    <title>All animals</title>
+</head>
+<body>
+<h2>animals from list</h2>
+<div th:each="animal : ${allAnimalsFromList}">
+    <div th:text="${animal.name}"></div>
+    <div th:text="${animal.sex}"></div>
+    <div th:text="${animal.age}"></div>
+    <div th:text="${animal.description}"></div>
+    <div th:text="${animal.species}"></div>
+    <div th:text="${animal.isReserved}"></div>
+</div>
+</body>
+</html>
