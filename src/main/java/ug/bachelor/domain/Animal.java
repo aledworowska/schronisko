@@ -16,7 +16,8 @@ public class Animal {
     private String name;
     private Sex sex;
     private int age;
-    private JTextField description;
+    private String description;
+    //private JTextField description;
     private Species species;
     private boolean isReserved;
 
@@ -35,13 +36,14 @@ public class Animal {
 
     public int getAge() {return age;}
 
-    public JTextField getDescription() {return description;}
+    //public JTextField getDescription() {return description;}
+    public String getDescription() {return description;}
 
     public Species getSpecies() {return species;}
 
     public boolean isReserved() {return isReserved;}
 
-    public Animal(String name, Sex sex, int age, JTextField description, Species species, boolean isReserved) {
+    public Animal(String name, Sex sex, int age, /*JTextField description*/ String description, Species species, boolean isReserved) {
         this.name = name;
         this.sex = sex;
         this.age = age;
@@ -49,7 +51,7 @@ public class Animal {
         this.species = species;
         this.isReserved = isReserved;
     }
-    public Animal(String id, String name, Sex sex, int age, JTextField description, Species species, boolean isReserved) {
+    public Animal(String id, String name, Sex sex, int age, /*JTextField description*/ String description, Species species, boolean isReserved) {
         this.id = id;
         this.name = name;
         this.sex = sex;
