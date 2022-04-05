@@ -4,31 +4,32 @@ import ug.bachelor.domain.enums.Sex;
 import ug.bachelor.domain.enums.Species;
 
 
+import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.swing.*;
 
+@Entity
 public class Animal {
 
-    private String id;
+    private Long id;
 
     private String name;
     private Sex sex;
     private int age;
     private String description;
-    //private JTextField description;
     private Species species;
     private boolean isReserved;
+
 
     public Animal() {
     }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    public String getId() {return id; }
+    public Long getId() {return id; }
 
-    public void setId(String id)  { this.id = id; }
+    public void setId(Long id)  { this.id = id; }
 
     public String getName() {return name;}
 
@@ -36,14 +37,26 @@ public class Animal {
 
     public int getAge() {return age;}
 
-    //public JTextField getDescription() {return description;}
     public String getDescription() {return description;}
 
     public Species getSpecies() {return species;}
 
     public boolean isReserved() {return isReserved;}
 
-    public Animal(String name, Sex sex, int age, /*JTextField description*/ String description, Species species, boolean isReserved) {
+
+    public void setName(String name) {this.name = name;}
+
+    public void setSex(Sex sex) {this.sex = sex;}
+
+    public void setAge(int age) { this.age = age;}
+
+    public void setDescription(String description) {this.description = description;}
+
+    public void setSpecies(Species species) {this.species = species;}
+
+    public void setReserved(boolean reserved) {isReserved = reserved;}
+
+    public Animal(String name, Sex sex, int age,String description, Species species, boolean isReserved) {
         this.name = name;
         this.sex = sex;
         this.age = age;
@@ -51,7 +64,7 @@ public class Animal {
         this.species = species;
         this.isReserved = isReserved;
     }
-    public Animal(String id, String name, Sex sex, int age, /*JTextField description*/ String description, Species species, boolean isReserved) {
+    public Animal(Long id, String name, Sex sex, int age, String description, Species species, boolean isReserved) {
         this.id = id;
         this.name = name;
         this.sex = sex;

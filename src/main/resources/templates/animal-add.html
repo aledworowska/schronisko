@@ -4,19 +4,20 @@
 >
 <head>
     <meta charset="UTF-8">
-    <title>Animals</title>
+    <title>Animals Add</title>
 </head>
 <body>
     <h2>Edit animal</h2>
 
-    <form method="post" th:action="@{/animal}" th:object="${animalToAdd}">
+    <form action="#" method="post" th:action="@{/animal/add}" th:object="${animalToAdd}">
 
-        <div><input type="text" th:field="*{name}"></div>
-        <div><input type="text" th:field="*{sex}"></div>
-        <div><input type="text" th:field="*{age}"></div>
-        <div><input type="text" th:field="*{description}"></div>
-        <div><input type="text" th:field="*{species}"></div>
-        <div><input type="text" th:field="*{isReserved}"></div>
+        <div><label>Name:</label><input type="text" th:field="*{name}"></div>
+        <div><label>Sex:</label><input type="text" th:field="*{sex}"></div>
+        <div><label>Age:</label><input type="text" th:field="*{age}"></div>
+        <div><label>Description:</label><input type="text" th:field="*{description}"></div>
+        <div><label>Species:</label><input type="text" th:field="*{species}"></div>
+        <div><label>Reserved:</label><input type="checkbox" th:checked="*{isReserved}"></div>
+        <div><input type ="submit" th:value="Submit"></div>
 
 
     </form>

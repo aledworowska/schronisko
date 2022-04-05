@@ -19,13 +19,13 @@ public class WebAnimalController {
 
     @GetMapping("/animal")
     public String animals(Model model){
-        model.addAttribute("allAnimalsFromList", animalService.getAnimalList());
+        model.addAttribute("allAnimalsFromList", animalService.allAnimals());
         return "animal-all";
     }
 
     @GetMapping("/animal/add")
     public String addNewAnimal(Model model){
-        model.addAttribute("animalToAdd", animalService.getAnimalList());
+        model.addAttribute("animalToAdd", new Animal());
         return "animal-add";
     }
 
