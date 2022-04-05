@@ -9,7 +9,7 @@
 <body>
     <h2>Edit animal</h2>
 
-    <form action="#" method="post" th:action="@{/animal/add}" th:object="${animalToAdd}">
+    <form action="#" method="post" th:action="@{/animal}" th:object="${animalToAdd}">
 
         <div><label>Name:</label><input type="text" th:field="*{name}"></div>
         <div><label>Sex:</label><input type="text" th:field="*{sex}"></div>
