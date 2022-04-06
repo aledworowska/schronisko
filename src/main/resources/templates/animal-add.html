@@ -12,14 +12,31 @@
     <form action="#" method="post" th:action="@{/animal}" th:object="${animalToAdd}">
 
         <div><label>Name:</label><input type="text" th:field="*{name}"></div>
-        <div><label>Sex:</label><input type="text" th:field="*{sex}"></div>
+        <div>
+            <label>Sex:</label>
+            <select name="sex">
+                <option th:each="sexOpt : ${T(ug.bachelor.domain.enums.Sex).values()}"
+                        th:value="${sexOpt}" th:text="${sexOpt}"></option>
+            </select>
+        </div>
         <div><label>Age:</label><input type="text" th:field="*{age}"></div>
         <div><label>Description:</label><input type="text" th:field="*{description}"></div>
-        <div><label>Species:</label><input type="text" th:field="*{species}"></div>
-        <div><label>Reserved:</label><input type="checkbox" th:checked="*{isReserved}"></div>
-        <div><input type ="submit" th:value="Submit"></div>
+        <div>
+            <label>Species:</label>
+            <select name="species">
+                <option th:each="speciesOpt : ${T(ug.bachelor.domain.enums.Species).values()}"
+                        th:value="${speciesOpt}" th:text="${speciesOpt}"></option>
+            </select>
+        </div>
+        <div><label>Reserved:</label>
+            <!-- <input type="checkbox" th:checked="*{isReserved}"></div>-->
+            <input type="checkbox" th:checked="*{isReserved}"></div>
+            <!--  -->
 
 
-    </form>
-</body>
-</html>
+          <div><input type ="submit" th:value="Submit"></div>
+
+
+      </form>
+  </body>
+  </html>

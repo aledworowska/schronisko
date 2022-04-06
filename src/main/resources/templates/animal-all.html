@@ -1,21 +1,39 @@
 <!DOCTYPE html>
 <html lang="en"
-      xmlns:th="http://www.thymeleaf.org"
->
+      xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>All animals</title>
+    <title>All mammals</title>
 </head>
+
 <body>
+<div><a th:href="@{/animal/add}">Add animal</a></div>
 <h2>animals from list</h2>
-<div th:each="animal : ${allAnimalsFromList}">
-    <div th:text="${animal.name}"></div>
-    <div th:text="${animal.sex}"></div>
-    <div th:text="${animal.age}"></div>
-    <div th:text="${animal.description}"></div>
-    <div th:text="${animal.species}"></div>
-    <div th:text="${animal.isReserved}"></div>
-    <br><br>
-</div>
+<table>
+    <thead>
+    <tr>
+        <td>Name</td>
+        <td>Sex</td>
+        <td>Age</td>
+        <td>Description</td>
+        <td>Species</td>
+        <td>Is Reserved</td>
+    </tr>
+    </thead>
+    <tbody>
+        <tr th:each="animal : ${allAnimalsFromList}">
+            <td th:text="${animal.name}"></td>
+            <td th:text="${animal.sex}"></td>
+            <td th:text="${animal.age}"></td>
+            <td th:text="${animal.description}"></td>
+            <td th:text="${animal.species}"></td>
+            <td th:text="${animal.isReserved}"></td>
+            <td><a type="button"  th:href="@{/animal/update/{id}(id=${animal.id})}">Edit</a></td>
+            <td><a type="button"  th:href="@{/animal/delete/{id}(id=${animal.id})}">Delete</a></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
 </body>
 </html>

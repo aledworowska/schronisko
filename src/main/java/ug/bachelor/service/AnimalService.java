@@ -37,15 +37,25 @@ public class AnimalService {
 
     public Animal updateAnimal(Animal animal) {
         Animal animalToUpdate = animalRepository.findById( animal.getId() ).orElse(null);
+        animalToUpdate.setName(animal.getName());
+        animalToUpdate.setSex(animal.getSex());
+        animalToUpdate.setSpecies(animal.getSpecies());
+        animalToUpdate.setReserved(animal.isReserved());
+        animalToUpdate.setAge(animal.getAge());
+        animalToUpdate.setDescription(animal.getDescription());
+
         return animalRepository.save(animalToUpdate);
     }
 
-
+    public void deleteAnimal(Animal animal) {
+        animalRepository.deleteById(animal.getId());
+    }
     public void initDB() {
-        Animal animal = new Animal("Lucky", Sex.MALE, 8,"przyjazny dla dzieci", Species.DOG, false);
+        Animal animal = new Animal("Lucky", Sex.MALE, 8,"przyjazny dla dzieci", Species.DOG, true);
         Animal animal2 = new Animal("Bonifacy", Sex.MALE, 3,"", Species.CAT, false);
         animalRepository.save(animal);
         animalRepository.save(animal2);
-
     }
+
+
 }
