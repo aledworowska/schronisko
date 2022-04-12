@@ -21,7 +21,7 @@ public class WebAnimalController {
 
     public WebAnimalController(AnimalService animalService) {this.animalService = animalService;}
 
-    @GetMapping("/")
+    @GetMapping(value="/")
     public String Menu(Model model){
         return "main-menu";
     }
