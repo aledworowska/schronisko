@@ -21,6 +21,11 @@ public class WebAnimalController {
 
     public WebAnimalController(AnimalService animalService) {this.animalService = animalService;}
 
+    @GetMapping("/")
+    public String Menu(Model model){
+        return "main-menu";
+    }
+
     @GetMapping("/animal")
     public String animals(Model model){
         model.addAttribute("allAnimalsFromList", animalService.allAnimals());
