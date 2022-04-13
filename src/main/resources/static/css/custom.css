@@ -1,4 +1,17 @@
+body {
+    background-color:grey;
+    /*font-family: ;*/
+    font-size: 20px;
+    width: 80vw;
+    margin-left: auto;
+    margin-right: auto;
+    color: black;
 
+}
+a:link {
+  text-decoration: none;
+  color: black;
+}
 .topnav {
   background-color: #333;
   overflow: hidden;
@@ -14,15 +27,34 @@
 }
 
 .topnav a:hover {
-  background-color: #ddd;
+  background-color: #545353;
   color: black;
 }
 
-.topnav a.active {
+.topnav a:active {
   background-color: #04AA6D;
   color: white;
 }
+@keyframes slidy {
+0% { left: 0%; }
+20% { left: 0%; }
+25% { left: -100%; }
+45% { left: -100%; }
+50% { left: -200%; }
+70% { left: -200%; }
+75% { left: -300%; }
+95% { left: -300%; }
+100% { left: -400%; }
+}
 
-body {
-background-color:grey;
+div#slider { overflow: hidden; }
+div#slider figure img { width: 20%;  }
+div#slider figure {
+  position: relative;
+  width: 300%;
+   margin-left: auto;
+  margin-right: auto;
+  text-align: left;
+  font-size: 0;
+  animation: 30s slidy infinite;
 }
