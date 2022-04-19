@@ -14,10 +14,10 @@ public class BachelorApplication {
 		SpringApplication.run(BachelorApplication.class, args);
 	}
 
-	@Bean
-	public CommandLineRunner initializeApp(@Autowired AnimalService animalService) {
-		return (args) -> animalService.initDB();
-	}
+//	@Bean
+//	public CommandLineRunner initializeApp(@Autowired AnimalService animalService) {
+//		return (args) -> animalService.initDB();
+//	}
 }
 
 

@@ -4,16 +4,13 @@ import ug.bachelor.domain.enums.Sex;
 import ug.bachelor.domain.enums.Species;
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+@Table(name = "animal")
 public class Animal {
 
     private Long id;
-
     private String name;
     private Sex sex;
     private int age;

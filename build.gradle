@@ -25,14 +25,11 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	compileOnly 'org.projectlombok:lombok'
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
-	runtimeOnly 'org.hsqldb:hsqldb'
+	runtimeOnly 'mysql:mysql-connector-java'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	implementation 'mysql:mysql-connector-java:8.0.15'
 
-	implementation group: 'org.postgresql', name: 'postgresql', version: '42.1.4'
-	implementation 'com.mchange:c3p0:0.9.5.5'
-	implementation 'org.hibernate:hibernate-c3p0:6.0.0.Final'
-	implementation 'com.mchange:mchange-commons-java:0.2.20'
 
 }
 
