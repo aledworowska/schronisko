@@ -19,6 +19,8 @@ public class Animal {
     private boolean isReserved;
 
 
+
+
     public Animal() {
     }
 
