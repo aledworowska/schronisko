@@ -1,4 +1,4 @@
-body {
+body{
     background-color:grey;
     /*font-family: ;*/
     font-size: 20px;
@@ -6,7 +6,6 @@ body {
     margin-left: auto;
     margin-right: auto;
     color: black;
-
 }
 a:link {
   text-decoration: none;
@@ -16,21 +15,18 @@ a:link {
   background-color: #333;
   overflow: hidden;
 }
-
 .topnav a {
   float: left;
   color: #f2f2f2;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
-  font-size: 17px;
+  font-size: 2.5vh;
 }
-
 .topnav a:hover {
   background-color: #545353;
   color: black;
 }
-
 .topnav a:active {
   background-color: #04AA6D;
   color: white;
@@ -51,10 +47,43 @@ div#slider { overflow: hidden; }
 div#slider figure img { width: 20%;  }
 div#slider figure {
   position: relative;
-  width: 300%;
-   margin-left: auto;
+  width: 500%;
+  margin-left: auto;
   margin-right: auto;
   text-align: left;
   font-size: 0;
   animation: 30s slidy infinite;
+}
+.name{
+
+   // background-color: red;
+    height: 20vh;
+}
+.logo {
+
+  //background-color: orange;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 8vw;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 10vw;
+  float: left;
+}
+.title {
+  //background-color: blue;
+  width: 50vw;
+  height: 7vw;
+  float: left;
+  margin-top: 11px;
+  margin-bottom: 10px;
+  font-family: 'Acme', sans-serif;
+  font-size: 14.5vh;
+  margin-left: 10vw;
+}
+.img{
+    //background-color:white;
+    height: 16vh;
+    margin-bottom: 10px;
 }

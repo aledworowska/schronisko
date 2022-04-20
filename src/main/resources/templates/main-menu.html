@@ -1,26 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-
-    <meta charset="UTF-8">
-    <link href="css/custom.css" rel="stylesheet" type="text/css"/>
-    <title>Schronisko</title>
-    <div class="topnav">
-        <a class="active" href="/">Start</a>
-        <a href="/animal">Zwierzęta</a>
-        <a href="/">Miejsca</a></li>
-        <a href="">About</a>
-    </div>
-
-</head>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: html_head"/>
 
 <body>
-    <header>
-
-
-
-    </header>
-
+    <div th:replace="layout :: html_name"/>
+    <header th:replace="layout :: html_menu"/>
     <div id="slider">
         <figure>
             <img src="img/mops1.jpg" alt>

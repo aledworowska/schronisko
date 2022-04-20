@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: html_head"/>
+<body>
+    <div th:replace="layout :: html_name"/>
+<h2>Edit animal</h2>
+
+<form action="#" method="post" th:action="@{/city}" th:object="${cityToAdd}">
+
+    <div><label>Name:</label><input type="text" th:field="*{name}"></div>
+    <div><input type ="submit" th:value="Submit"></div>
+
+
+
+</form>
+
+</body>
+</html>

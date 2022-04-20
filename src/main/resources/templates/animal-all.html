@@ -1,25 +1,11 @@
 <!DOCTYPE html>
 <html lang="en"
       xmlns:th="http://www.thymeleaf.org">
-<head>
-    <meta charset="UTF-8">
-    <link href="css/custom.css" rel="stylesheet" type="text/css"/>
-    <title>Animals list</title>
-</head>
+<head th:replace="layout :: html_head"/>
+
 
 <body>
-
-<header>
-
-    <div class="topnav">
-        <a class="active" href="/">Start</a>
-        <a href="/animal">Zwierzęta</a>
-        <a href="/">Miejsca</a></li>
-        <a href="">About</a>
-    </div>
-
-</header>
-
+    <div th:replace="layout :: html_name"/>
 <div><a th:href="@{/animal/add}">Add animal</a></div>
 <h2>animals from list</h2>
 <table>

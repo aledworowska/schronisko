@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+>
+<head th:replace="layout :: html_head"/>
+<body>
+    <div th:replace="layout :: html_name"/>
+<div><a th:href="@{/city}">All cities</a></div>
+
+<h2>Edit</h2>
+<form method="post"  th:action="@{/city/update/} + ${id}" th:object="${cityToUpdate}">
+
+    <div><label>City name:</label><input type="text" th:field="*{name}"></div>
+    <div><input type ="submit" th:value="Submit"></div>
+
+</form>
+</body>
+</html>

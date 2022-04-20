@@ -2,11 +2,9 @@
 <html lang="en"
       xmlns:th="http://www.thymeleaf.org"
 >
-<head>
-    <meta charset="UTF-8">
-    <title>Animals Add</title>
-</head>
+<head th:replace="layout :: html_head"/>
 <body>
+<div th:replace="layout :: html_name"/>
     <h2>Edit animal</h2>
 
     <form action="#" method="post" th:action="@{/animal}" th:object="${animalToAdd}">
