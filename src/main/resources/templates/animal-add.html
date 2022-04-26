@@ -7,7 +7,7 @@
 <div th:replace="layout :: html_name"/>
     <h2>Edit animal</h2>
 
-    <form action="#" method="post" th:action="@{/animal}" th:object="${animalToAdd}">
+    <form  th:method="post" th:action="@{/animal}" th:object="${animalToAdd}" enctype="multipart/form-data">
 
         <div><label>Name:</label><input type="text" th:field="*{name}"></div>
         <div>
@@ -30,6 +30,9 @@
             <!-- <input type="checkbox" th:checked="*{isReserved}"></div>-->
             <input type="checkbox" th:checked="*{isReserved}"></div>
             <!--  -->
+
+        <div><label>Obraz:</label>
+            <input type="file" name="image" accept="image/png, image/jpg" />
 
 
           <div><input type ="submit" th:value="Submit"></div>

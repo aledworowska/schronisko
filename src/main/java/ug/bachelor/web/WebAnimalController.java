@@ -3,15 +3,17 @@ package ug.bachelor.web;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.view.RedirectView;
 import ug.bachelor.domain.Animal;
 import ug.bachelor.service.AnimalService;
 
 import javax.validation.Valid;
+import java.io.IOError;
+import java.io.IOException;
 
 
 @Controller
@@ -35,13 +37,19 @@ public class WebAnimalController {
     @GetMapping("/animal/add")
     public String addNewAnimal(Model model){
         model.addAttribute("animalToAdd", new Animal());
+
         return "animal-add";
     }
 
-    @PostMapping("/animal")
-    public String addNewAnimal(@ModelAttribute("allAnimalsFromList") Animal animal) {
+    @RequestMapping("/animal")
+    public RedirectView addNewAnimal(@ModelAttribute("allAnimalsFromList") Animal animal, @RequestParam("image") MultipartFile multipartFile) throws IOException {
+        String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
+        String uploadDir = "Animal-photos/" + animal.getId();
+        FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
+
+
         animalService.addAnimal(animal);
-        return "redirect:/animal";
+        return new RedirectView("/animal",true);
     }
 
     @GetMapping("/animal/delete/{id}")

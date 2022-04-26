@@ -50,12 +50,7 @@ public class AnimalService {
     public void deleteAnimal(Animal animal) {
         animalRepository.deleteById(animal.getId());
     }
-    public void initDB() {
-        Animal animal = new Animal("Lucky", Sex.MALE, 8,"przyjazny dla dzieci", Species.DOG, true);
-        Animal animal2 = new Animal("Bonifacy", Sex.MALE, 3,"", Species.CAT, false);
-        animalRepository.save(animal);
-        animalRepository.save(animal2);
-    }
+
 
 
 }

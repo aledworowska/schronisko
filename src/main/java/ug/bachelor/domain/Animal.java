@@ -17,6 +17,8 @@ public class Animal {
     private String description;
     private Species species;
     private boolean isReserved;
+    @Column(nullable = true, length = 64)
+    private String image;
 
 
 
@@ -55,15 +57,15 @@ public class Animal {
 
     public void setReserved(boolean reserved) {isReserved = reserved;}
 
-    public Animal(String name, Sex sex, int age,String description, Species species, boolean isReserved) {
-        this.name = name;
-        this.sex = sex;
-        this.age = age;
-        this.description = description;
-        this.species = species;
-        this.isReserved = isReserved;
+    public String getImage() {
+        return image;
     }
-    public Animal(Long id, String name, Sex sex, int age, String description, Species species, boolean isReserved) {
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public Animal(Long id, String name, Sex sex, int age, String description, Species species, boolean isReserved, String image) {
         this.id = id;
         this.name = name;
         this.sex = sex;
@@ -71,5 +73,16 @@ public class Animal {
         this.description = description;
         this.species = species;
         this.isReserved = isReserved;
+        this.image = image;
+    }
+
+    public Animal(String name, Sex sex, int age, String description, Species species, boolean isReserved, String image) {
+        this.name = name;
+        this.sex = sex;
+        this.age = age;
+        this.description = description;
+        this.species = species;
+        this.isReserved = isReserved;
+        this.image = image;
     }
 }
