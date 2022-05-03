@@ -56,4 +56,12 @@ public class WebCityController {
         return "redirect:/city";
     }
 
+    //view all animals from city
+
+//    @GetMapping("/city/view")
+//    public String animalsFromCity(Model model){
+//        model.addAttribute("allAnimalsFromCity", cityService.allCities());
+//        return "city-all";
+//    }
+
 }

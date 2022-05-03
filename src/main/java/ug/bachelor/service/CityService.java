@@ -3,10 +3,12 @@ package ug.bachelor.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import ug.bachelor.domain.Animal;
 import ug.bachelor.domain.City;
 import ug.bachelor.repository.CityRepository;
 
 import javax.transaction.Transactional;
+import java.util.List;
 
 
 @Service
@@ -34,6 +36,7 @@ public class CityService {
     }
 
     public void deleteCity(City city) { cityRepository.deleteById(city.getId());}
+
 
 
 

@@ -30,6 +30,13 @@
             <!-- <input type="checkbox" th:checked="*{isReserved}"></div>-->
             <input type="checkbox" th:checked="*{isReserved}"></div>
             <!--  -->
+        <div><label>City:</label>
+            <select class="form-control" name="city">
+                <option th:each="city : ${allCities}"
+                        th:value="${city.id}"
+                        th:text="${city.name}">City</option>
+            </select>
+        </div>
 
         <div><label>Obraz:</label>
             <input type="file" name="image" accept="image/png, image/jpg" />

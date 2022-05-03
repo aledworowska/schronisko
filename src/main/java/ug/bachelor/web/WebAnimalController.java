@@ -5,14 +5,19 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import ug.bachelor.domain.Animal;
 import ug.bachelor.service.AnimalService;
+import ug.bachelor.service.CityService;
 
 
 @Controller
 public class WebAnimalController {
     private final AnimalService animalService;
+    private final CityService cityService;
 
 
-    public WebAnimalController(AnimalService animalService) {this.animalService = animalService;}
+    public WebAnimalController(AnimalService animalService, CityService cityService) {
+        this.animalService = animalService;
+        this.cityService = cityService;
+    }
 
     @GetMapping(value="/")
     public String Menu(Model model){
@@ -28,6 +33,7 @@ public class WebAnimalController {
     @GetMapping("/animal/add")
     public String addNewAnimal(Model model){
         model.addAttribute("animalToAdd", new Animal());
+        model.addAttribute("allCities", cityService.allCities());
 
         return "animal-add";
     }
