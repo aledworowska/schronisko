@@ -1,23 +1,23 @@
 package ug.bachelor.domain;
 import javax.persistence.*;
 
-import lombok.Getter;
-import lombok.Setter;
-import ug.bachelor.domain.enums.*;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.List;
 
 
 @Entity
+@Table(name = "city")
 public class City {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id" , nullable = false)
     private Long id;
+
     private String name;
 
-    //@ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
-    private ArrayList<Animal> animalsList;
+    @OneToMany(mappedBy = "city", orphanRemoval = true, fetch = FetchType.LAZY)
+    private List<Animal> animalsList;
 
 
     public City() {
@@ -27,8 +27,7 @@ public class City {
         this.name = name;
     }
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     public Long getId() {
         return id;
     }
@@ -45,11 +44,11 @@ public class City {
         this.name = name;
     }
 
-    public ArrayList<Animal> getAnimalsList() {
+    public List<Animal> getAnimalsList() {
         return animalsList;
     }
 
-    public void setAnimalsList(ArrayList<Animal> animalsList) {
+    public void setAnimalsList(List<Animal> animalsList) {
         this.animalsList = animalsList;
     }
 }

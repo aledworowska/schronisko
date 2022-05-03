@@ -2,6 +2,7 @@ package ug.bachelor.domain;
 
 import ug.bachelor.domain.enums.Sex;
 import ug.bachelor.domain.enums.Species;
+import ug.bachelor.domain.City;
 
 
 import javax.persistence.*;
@@ -10,24 +11,36 @@ import javax.persistence.*;
 @Table(name = "animal")
 public class Animal {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id", nullable = false)
     private Long id;
+
     private String name;
+
     private Sex sex;
+
     private int age;
+
     private String description;
+
     private Species species;
+
     private boolean isReserved;
+
+
+    @ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
+    @JoinColumn(name = "city_id", referencedColumnName = "id")
+    private City city;
+
+
 //    @Column(nullable = true, length = 64)
 //    private String image;
-
-
-
 
     public Animal() {
     }
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+
     public Long getId() {return id; }
 
     public void setId(Long id)  { this.id = id; }
@@ -43,6 +56,10 @@ public class Animal {
     public Species getSpecies() {return species;}
 
     public boolean isReserved() {return isReserved;}
+
+    public City getCity() {
+        return city;
+    }
 
 
     public void setName(String name) {this.name = name;}
