@@ -56,12 +56,10 @@ div#slider figure {
 }
 .name{
 
-   // background-color: red;
     height: 20vh;
 }
 .logo {
 
-  //background-color: orange;
   margin-top: 10px;
   margin-bottom: 10px;
   height: 8vw;
@@ -72,7 +70,6 @@ div#slider figure {
   float: left;
 }
 .title {
-  //background-color: blue;
   width: 50vw;
   height: 7vw;
   float: left;
@@ -83,7 +80,6 @@ div#slider figure {
   margin-left: 10vw;
 }
 .img{
-    //background-color:white;
     height: 16vh;
     margin-bottom: 10px;
 }

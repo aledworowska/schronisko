@@ -6,6 +6,7 @@
 
 <body>
     <div th:replace="layout :: html_name"/>
+    <header th:replace="layout :: html_menu"/>
 <div><a th:href="@{/animal/add}">Add animal</a></div>
 <h2>animals from list</h2>
 <table>
@@ -16,6 +17,7 @@
         <td>Age</td>
         <td>Description</td>
         <td>Species</td>
+        <td>City</td>
         <td>Is Reserved</td>
     </tr>
     </thead>
@@ -26,6 +28,7 @@
             <td th:text="${animal.age}"></td>
             <td th:text="${animal.description}"></td>
             <td th:text="${animal.species}"></td>
+            <td th:text="${animal.city.name}"></td>
             <td th:text="${animal.isReserved}"></td>
             <td><a type="button"  th:href="@{/animal/update/{id}(id=${animal.id})}">Edit</a></td>
             <td><a type="button"  th:href="@{/animal/delete/{id}(id=${animal.id})}">Delete</a></td>

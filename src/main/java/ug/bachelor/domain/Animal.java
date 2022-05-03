@@ -74,6 +74,10 @@ public class Animal {
 
     public void setReserved(boolean reserved) {isReserved = reserved;}
 
+    public void setCity(City city) {
+        this.city = city;
+    }
+
 //    public String getImage() {
 //        return image;
 //    }
@@ -113,12 +117,13 @@ public class Animal {
         this.isReserved = isReserved;
     }
 
-    public Animal(String name, Sex sex, int age, String description, Species species, boolean isReserved  ) {
+    public Animal(String name, Sex sex, int age, String description, Species species, boolean isReserved, City city  ) {
         this.name = name;
         this.sex = sex;
         this.age = age;
         this.description = description;
         this.species = species;
         this.isReserved = isReserved;
+        this.city = city;
     }
 }

@@ -43,6 +43,7 @@ public class AnimalService {
         animalToUpdate.setReserved(animal.isReserved());
         animalToUpdate.setAge(animal.getAge());
         animalToUpdate.setDescription(animal.getDescription());
+        animalToUpdate.setCity(animal.getCity());
 
         return animalRepository.save(animalToUpdate);
     }
