@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: html_head"/>
+
+
+<body>
+    <div th:replace="layout :: html_name"/>
+    <header th:replace="layout :: html_menu"/>
+<div><a th:href="@{/animal/add}">Add animal</a></div>
+<h2>animals from list</h2>
+<table>
+    <thead>
+    <tr>
+        <td>Name</td>
+        <td>Sex</td>
+        <td>Age</td>
+        <td>Description</td>
+        <td>Species</td>
+        <td>City</td>
+        <td>Is Reserved</td>
+    </tr>
+    </thead>
+    <tbody>
+        <tr th:each="animal : ${allAnimalsFromList}">
+            <td th:text="${animal.name}"></td>
+            <td th:text="${animal.sex}"></td>
+            <td th:text="${animal.age}"></td>
+            <td th:text="${animal.description}"></td>
+            <td th:text="${animal.species}"></td>
+            <td th:text="${animal.city.name}"></td>
+            <td th:text="${animal.isReserved}"></td>
+            <td><a type="button"  th:href="@{/animal/update/{id}(id=${animal.id})}">Edit</a></td>
+            <td><a type="button"  th:href="@{/animal/delete/{id}(id=${animal.id})}">Delete</a></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </tbody>
+</table>
+
+<br>
+<a href="/">Back to menu</a>
+
+</body>
+</html>

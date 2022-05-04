@@ -1,6 +1,5 @@
 body{
     background-color:grey;
-    /*font-family: ;*/
     font-size: 20px;
     width: 80vw;
     margin-left: auto;
@@ -11,26 +10,50 @@ a:link {
   text-decoration: none;
   color: black;
 }
+header{
+ background-color: #333;
+   height: 8.3vh;
+   overflow: hidden;
+   float: left;
+   width:80vw;
+}
 .topnav {
-  background-color: #333;
-  overflow: hidden;
+    width: 72.6vw;
+    float: left;
+    padding: 1.9vh 1.2vw;
 }
 .topnav a {
-  float: left;
   color: #f2f2f2;
   text-align: center;
-  padding: 14px 16px;
+  padding: 1.9vh 1.2vw;
   text-decoration: none;
-  font-size: 2.5vh;
+  font-size: 4vh;
 }
 .topnav a:hover {
   background-color: #545353;
   color: black;
 }
-.topnav a:active {
-  background-color: #04AA6D;
-  color: white;
+.arrow_back {
+      width: 5vw;
+      float: left;
+      height: 8.3vh;
 }
+.arrow_back a {
+    width: 5vw;
+    float: left;
+    height: 8.3vh;
+}
+.arrow_back a:hover {
+    background-color: #545353;
+}
+.icon_image{
+    width: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.9vw;
+}
+
 @keyframes slidy {
 0% { left: 0%; }
 20% { left: 0%; }
@@ -43,7 +66,10 @@ a:link {
 100% { left: -400%; }
 }
 
-div#slider { overflow: hidden; }
+div#slider {
+    overflow: hidden;
+    clear: both;
+}
 div#slider figure img { width: 20%;  }
 div#slider figure {
   position: relative;
@@ -55,11 +81,9 @@ div#slider figure {
   animation: 30s slidy infinite;
 }
 .name{
-
     height: 20vh;
 }
 .logo {
-
   margin-top: 10px;
   margin-bottom: 10px;
   height: 8vw;
@@ -82,4 +106,74 @@ div#slider figure {
 .img{
     height: 16vh;
     margin-bottom: 10px;
+}
+.nav{
+    text-align: center;
+    font-size: 6vh;
+    margin-top: 11vh;
+    margin-bottom: 2vh;
+}
+.content{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.animal-box{
+    border-style: dotted;
+    border-width: 0.13vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.animal_image{
+    width: 18vw;
+    height: 18vw;
+    border-style: solid;
+}
+.animal_data{
+    width: 17.3vw;
+    height: 18vw;
+    margin-left: 0.5vw;
+    float: left;
+}
+.options{
+    width: 3vw;
+    height: 18vw;
+    margin-left: 0.5vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.edit-icon{
+    width: 2vw;
+    height: 2vw;
+}
+.delete-icon{
+    width: 2vw;
+    height: 2vw;
+    margin-bottom: 15vh;
+}
+.options a {
+    width: 2vw;
+    height: 2vw;
+    margin-top: 13vh;
+}
+.options b {
+    width: 2vw;
+    height: 2vw;
+    margin-bottom: 15vh;
+}
+.options a:hover {
+    background-color: #5c5a5a;
+}
+.options b:hover {
+    background-color: #5c5a5a;
+}
+.data_title{
+    float: left;
+    margin-right: 0.5vw;
+}
+.data{}
+.data_line{
+    margin-top: 1vh;
 }
