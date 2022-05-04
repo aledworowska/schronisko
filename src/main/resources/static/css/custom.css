@@ -151,22 +151,18 @@ div#slider figure {
 .delete-icon{
     width: 2vw;
     height: 2vw;
-    margin-bottom: 15vh;
 }
-.options a {
+.option-edit {
     width: 2vw;
     height: 2vw;
     margin-top: 13vh;
 }
-.options b {
+.option-delete {
     width: 2vw;
     height: 2vw;
-    margin-bottom: 15vh;
+    margin-bottom: 13vh;
 }
 .options a:hover {
-    background-color: #5c5a5a;
-}
-.options b:hover {
     background-color: #5c5a5a;
 }
 .data_title{
