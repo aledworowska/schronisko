@@ -7,7 +7,7 @@
 <body>
     <div th:replace="layout :: html_name"/>
     <header th:replace="layout :: html_menu"/>
-
+<a href="/">Back to main page</a>
 <div class="nav">All animals from shelter</div>
 <div class="content">
     <div class="animal-box" th:each="animal : ${allAnimalsFromList}">
@@ -30,7 +30,6 @@
 
 <br>
 <div><a th:href="@{/animal/add}">Add animal</a></div>
-<a href="/">Back to menu</a>
 
 </body>
 </html>
