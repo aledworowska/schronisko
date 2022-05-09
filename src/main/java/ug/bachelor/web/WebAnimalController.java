@@ -2,10 +2,15 @@ package ug.bachelor.web;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.servlet.view.RedirectView;
 import ug.bachelor.domain.Animal;
 import ug.bachelor.service.AnimalService;
 import ug.bachelor.service.CityService;
+
+import java.io.IOException;
 
 
 @Controller
@@ -38,22 +43,22 @@ public class WebAnimalController {
         return "animal-add";
     }
 
-    @PostMapping("/animal")
-    public String addNewAnimal(@ModelAttribute("allAnimalsFromList") Animal animal)  {
-        animalService.addAnimal(animal);
-        return "redirect:/animal";
-    }
-
-//    @RequestMapping("/animal") //Kopia powyższego kontrollera dla jpg
-//    public RedirectView addNewAnimal(@ModelAttribute("allAnimalsFromList") Animal animal, @RequestParam("image") MultipartFile multipartFile) throws IOException {
-//        String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
-//        String uploadDir = "Animal-photos/" + animal.getId();
-//        FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
-//
-//
+//    @PostMapping("/animal")
+//    public String addNewAnimal(@ModelAttribute("allAnimalsFromList") Animal animal)  {
 //        animalService.addAnimal(animal);
-//        return new RedirectView("/animal",true);
+//        return "redirect:/animal";
 //    }
+
+    @RequestMapping("/animal") //Kopia powyższego kontrollera dla jpg
+    public RedirectView addNewAnimal(@ModelAttribute ("animalToAdd")Animal animal, @RequestParam("image") MultipartFile multipartFile) throws IOException {
+        String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
+
+        animal.setPhoto(fileName);
+        Animal tempAnimal = animalService.addAnimal(animal);
+        String uploadDir = "Animal-photos/" + tempAnimal.getId();
+        FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
+        return new RedirectView("/animal",true);
+    }
 
     @GetMapping("/animal/delete/{id}")
     public String deleteAnimal(@PathVariable("id") long id, Model model) {

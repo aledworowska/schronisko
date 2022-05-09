@@ -2,7 +2,6 @@ package ug.bachelor.domain;
 
 import ug.bachelor.domain.enums.Sex;
 import ug.bachelor.domain.enums.Species;
-import ug.bachelor.domain.City;
 
 
 import javax.persistence.*;
@@ -34,8 +33,8 @@ public class Animal {
     private City city;
 
 
-//    @Column(nullable = true, length = 64)
-//    private String image;
+    @Column(nullable = true, length = 64)
+    private String photo;
 
     public Animal() {
     }
@@ -78,36 +77,15 @@ public class Animal {
         this.city = city;
     }
 
-//    public String getImage() {
-//        return image;
-//    }
+    public String getPhoto() {
+        return photo;
+    }
 
-   // public void setImage(String image) {
-//        this.image = image;
-//    }
+    public void setPhoto(String photo) {
+        this.photo = photo;
+    }
 
-//    public Animal(Long id, String name, Sex sex, int age, String description, Species species, boolean isReserved, String image) {
-//        this.id = id;
-//        this.name = name;
-//        this.sex = sex;
-//        this.age = age;
-//        this.description = description;
-//        this.species = species;
-//        this.isReserved = isReserved;
-//        this.image = image;
-//    }
-//
-//    public Animal(String name, Sex sex, int age, String description, Species species, boolean isReserved, String image) {
-//        this.name = name;
-//        this.sex = sex;
-//        this.age = age;
-//        this.description = description;
-//        this.species = species;
-//        this.isReserved = isReserved;
-//        this.image = image;
-//    }
-
-    public Animal(Long id, String name, Sex sex, int age, String description, Species species, boolean isReserved) {
+    public Animal(Long id, String name, Sex sex, int age, String description, Species species, boolean isReserved, String photo, City city) {
         this.id = id;
         this.name = name;
         this.sex = sex;
@@ -115,15 +93,48 @@ public class Animal {
         this.description = description;
         this.species = species;
         this.isReserved = isReserved;
+        this.photo = photo;
+        this.city=city;
     }
 
-    public Animal(String name, Sex sex, int age, String description, Species species, boolean isReserved, City city  ) {
+    public Animal(String name, Sex sex, int age, String description, Species species, boolean isReserved, String photo, City city) {
         this.name = name;
         this.sex = sex;
         this.age = age;
         this.description = description;
         this.species = species;
         this.isReserved = isReserved;
-        this.city = city;
+        this.photo = photo;
+        this.city=city;
     }
+
+    @Transient
+    public String getPhotosImagePath() {
+        if (photo == null || id == null) return null;
+
+        return "/Animal-photos/" + id + "/" + photo;
+    }
+
+//
+//    public Animal(Long id, String name, Sex sex, int age, String description, Species species, boolean isReserved) {
+//        this.id = id;
+//        this.name = name;
+//        this.sex = sex;
+//        this.age = age;
+//        this.description = description;
+//        this.species = species;
+//        this.isReserved = isReserved;
+//    }
+//
+//    public Animal(String name, Sex sex, int age, String description, Species species, boolean isReserved, City city  ) {
+//        this.name = name;
+//        this.sex = sex;
+//        this.age = age;
+//        this.description = description;
+//        this.species = species;
+//        this.isReserved = isReserved;
+//        this.city = city;
+//    }
+
+
 }

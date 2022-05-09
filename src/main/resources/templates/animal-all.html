@@ -11,7 +11,7 @@
 <div class="nav">All animals from shelter</div>
 <div class="content">
     <div class="animal-box" th:each="animal : ${allAnimalsFromList}">
-        <div class="animal_image" > <img src="animal.jpg" alt="animal image"></div>
+        <div class="animal_image" > <img th:src="@{${animal.photosImagePath}}" alt="animal image"></div>
         <div class="animal_data">
             <div class="data_line"><div class="data_title">name: </div><div class="data" th:text="${animal.name}"></div></div>
             <div class="data_line"><div class="data_title">sex: </div><div class="data" th:text="${animal.sex}"></div></div>
