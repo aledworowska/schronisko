@@ -1,10 +1,12 @@
-body{
-    background-color:grey;
-    font-size: 20px;
-    width: 80vw;
-    margin-left: auto;
-    margin-right: auto;
-    color: black;
+body {
+  background-color: grey;
+  font-size: 20px;
+  width: 80vw;
+  margin-left: auto;
+  margin-right: auto;
+  color: black;
+  background: repeating-linear-gradient(#585859 0%, #8d8e8e 40%,#8d8e8e 40%,#585859 100%);
+  height: 97.9vh;
 }
 a:link {
   text-decoration: none;
@@ -187,19 +189,40 @@ div#slider figure {
     box-shadow: 0px 8px 24px 0 rgba(255,255,255,0.05) ;
 }*/
 .addForm{
-    background: linear-gradient(
-        to left,
-        rgba(255,255,255,0.05),
-        rgba(255,255,255,0.35)
-    );
+    background: rgba(0,0,0,.5);
     border-radius:15px;
-    box-shadow:0px 8px 24px 0 rgba(255,255,255,0.2) ;
-    max-width: 300px;
     max-height:100%;
     padding: 36px 24px;
-    text-align:center;
     width: 100%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 14vh;
+    max-width: 400px;
+    padding: 40px;
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+}
+.h1{
+      background-color: #333;
+      color: white;
+      padding: 10px 9px 10px 9px;
+      letter-spacing: 1px;
+      margin-left: -4vw;
+      width: 12vw;
+      text-align: center;
+      margin-bottom: 1vh;
+      margin-top: -1vh;
+      font-size: 3.5vh;
+}
+input{
+    font-family: inherit;
+    padding: 0.7vh;
+    width: 95%;
+    margin-top: 1vh;
+}
+label{
+    justify-self: end;
+}
+.form_category{
+    margin-top: 2vh;
 }

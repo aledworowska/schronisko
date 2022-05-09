@@ -7,45 +7,44 @@
 <header th:replace="layout :: html_menu"/>
 <div class="addForm">
 
-    <div>Add animal</div>
+    <div class="h1">Add animal</div>
 
     <form  th:method="post" th:action="@{/animal}" th:object="${animalToAdd}" enctype="multipart/form-data">
 
-        <div><label>Name:<input type="text" th:field="*{name}"></label></div>
-        <div>
+        <label><div class="form_category">Name:</div><input type="text" th:field="*{name}"></label>
+        <div class="form_category">
             <label>Sex:
             <select name="sex">
                 <option th:each="sexOpt : ${T(ug.bachelor.domain.enums.Sex).values()}"
                         th:value="${sexOpt}" th:text="${sexOpt}"></option>
             </select></label>
         </div>
-        <div><label>Age:<input type="text" th:field="*{age}"></label></div>
-        <div><label>Description:<input type="text" th:field="*{description}"></label></div>
-        <div>
-            <label>Species:
+        <label><div class="form_category">Age:</div><input type="text" th:field="*{age}"></label>
+        <label><div class="form_category">Description:</div><input type="text" th:field="*{description}"></label>
+            <label><div class="form_category">Species:
             <select name="species">
                 <option th:each="speciesOpt : ${T(ug.bachelor.domain.enums.Species).values()}"
                         th:value="${speciesOpt}" th:text="${speciesOpt}"></option>
-            </select></label>
-        </div>
-        <div><label>Reserved:
+            </select></div></label>
+
+        <label><div class="form_category">Reserved:</div>
             <!-- <input type="checkbox" th:checked="*{isReserved}"></div>-->
-            <input type="checkbox" th:checked="*{isReserved}"></label></div>
+            <input type="checkbox" th:checked="*{isReserved}"></label>
         <!--  -->
-        <div><label>City:
+        <label><div class="form_category">City:
             <select class="form-control" name="city">
                 <option th:each="city : ${allCities}"
                         th:value="${city.id}"
                         th:text="${city.name}">City</option>
-            </select></label>
-        </div>
+            </select></div></label>
 
-        <div><label>Obraz:
+
+        <label><div class="form_category">Obraz:
             <input type="file" name="image" accept="image/png, image/jpg" />
-            </label>
+        </div></label>
             <div><input type ="reset" th:value="Reset"></div>
             <div><input type ="submit" th:value="Submit"></div>
-        </div>
+
 
 
     </form>
