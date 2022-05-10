@@ -113,7 +113,7 @@ div#slider figure {
     text-align: center;
     font-size: 6vh;
      margin-top: 1vh;
-     margin-bottom: 1vh;
+     margin-bottom: 4vh;
 }
 .content{
     display: flex;
@@ -121,16 +121,23 @@ div#slider figure {
     justify-content: center;
 }
 .animal-box{
-    border-style: dotted;
+    /*border-style: dotted;*/
     border-width: 0.13vw;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+
+    background: rgba(0,0,0,.5);
+    border-radius:15px;
+    margin-left: auto;
+    margin-right: auto;
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+
 }
 .animal_image{
     width: 18vw;
     height: 18vw;
-    border-style: solid;
 }
 .animal_data{
     width: 17.3vw;
@@ -201,6 +208,8 @@ div#slider figure {
     padding: 40px;
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    color: white;
+    margin-bottom: 25vh;
 }
 .h1{
       background-color: #333;
@@ -225,4 +234,38 @@ label{
 }
 .form_category{
     margin-top: 2vh;
+}
+
+#photo {
+  max-width: 17vw;
+  max-height: 17vw;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.9vw;
+}
+.button{
+   /* width: 5vw;*/
+}
+#checkbox{
+    position: relative;
+    left: -3.9vw;
+    top: -3.3vh;
+}
+#image{
+    margin-left: 1vh;
+    width: 70%;
+}
+#city{
+    margin-top: -1vh;
+}
+#reset_button{
+    float: left;
+    width: 9.5vw;
+    padding: 1vh;
+    margin-right: 1vw;
+}
+#submit_button{
+    float: left;
+    width: 9.5vw;
+    padding: 1vh;
 }

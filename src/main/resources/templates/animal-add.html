@@ -27,11 +27,10 @@
                         th:value="${speciesOpt}" th:text="${speciesOpt}"></option>
             </select></div></label>
 
-        <label><div class="form_category">Reserved:</div>
+        <label><div class="form_category">Reserved:<input id="checkbox" type="checkbox" th:checked="*{isReserved}"></div>
             <!-- <input type="checkbox" th:checked="*{isReserved}"></div>-->
-            <input type="checkbox" th:checked="*{isReserved}"></label>
-        <!--  -->
-        <label><div class="form_category">City:
+        </label>
+        <label><div id="city" class="form_category">City:
             <select class="form-control" name="city">
                 <option th:each="city : ${allCities}"
                         th:value="${city.id}"
@@ -39,11 +38,13 @@
             </select></div></label>
 
 
-        <label><div class="form_category">Obraz:
-            <input type="file" name="image" accept="image/png, image/jpg" />
+        <label><div class="form_category">Obraz:<input id="image" type="file" name="image" accept="image/png, image/jpg" />
         </div></label>
-            <div><input type ="reset" th:value="Reset"></div>
-            <div><input type ="submit" th:value="Submit"></div>
+        <div class="button">
+            <input id="reset_button" type ="reset" th:value="Reset">
+            <input id="submit_button" type ="submit" th:value="Submit">
+        </div>
+
 
 
 
