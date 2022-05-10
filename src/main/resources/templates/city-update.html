@@ -12,6 +12,7 @@
 <form method="post"  th:action="@{/city/update/} + ${id}" th:object="${cityToUpdate}">
 
     <div><label>City name:</label><input type="text" th:field="*{name}"></div>
+    <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}"> Name can't be empty. </div>
     <div><input type ="submit" th:value="Submit"></div>
 
 </form>

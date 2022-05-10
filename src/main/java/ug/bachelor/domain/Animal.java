@@ -1,10 +1,15 @@
 package ug.bachelor.domain;
 
+import org.hibernate.validator.constraints.Range;
 import ug.bachelor.domain.enums.Sex;
 import ug.bachelor.domain.enums.Species;
 
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "animal")
@@ -14,13 +19,15 @@ public class Animal {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
-
+    @NotEmpty
+    @Size(min=1,max=255)
     private String name;
 
     private Sex sex;
-
+    @NotNull
+    @Range(min=1, max=50)
     private int age;
-
+    @Size(min=0,max=255)
     private String description;
 
     private Species species;
@@ -31,7 +38,6 @@ public class Animal {
     @ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
     @JoinColumn(name = "city_id", referencedColumnName = "id")
     private City city;
-
 
     @Column(nullable = true, length = 64)
     private String photo;

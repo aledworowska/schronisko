@@ -1,5 +1,7 @@
 package ug.bachelor.domain;
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -13,10 +15,11 @@ public class City {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id" , nullable = false)
     private Long id;
-
+    @NotEmpty
+    @Size(min=1,max=255)
     private String name;
 
-    @OneToMany(mappedBy = "city", orphanRemoval = true, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "city", fetch = FetchType.LAZY)
     private List<Animal> animalsList;
 
 

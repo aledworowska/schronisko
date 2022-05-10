@@ -12,6 +12,7 @@
     <form  th:method="post" th:action="@{/animal}" th:object="${animalToAdd}" enctype="multipart/form-data">
 
         <label><div class="form_category">Name:</div><input type="text" th:field="*{name}"></label>
+        <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}"> Name can't be empty </div>
         <div class="form_category">
             <label>Sex:
             <select name="sex">
@@ -20,7 +21,9 @@
             </select></label>
         </div>
         <label><div class="form_category">Age:</div><input type="text" th:field="*{age}"></label>
+        <div th:if="${#fields.hasErrors('Age')}" th:errors="*{age}"> Age must be withing 1-50</div>
         <label><div class="form_category">Description:</div><input type="text" th:field="*{description}"></label>
+        <div th:if="${#fields.hasErrors('description')}" th:errors="*{description}"> Description must be withing 0-1024 </div>
             <label><div class="form_category">Species:
             <select name="species">
                 <option th:each="speciesOpt : ${T(ug.bachelor.domain.enums.Species).values()}"
