@@ -39,8 +39,9 @@ public class WebAnimalController {
 
     @GetMapping("/animal/add")
     public String addNewAnimal(Model model){
-        model.addAttribute("animalToAdd", new Animal());
         model.addAttribute("allCities", cityService.allCities());
+        model.addAttribute("animalToAdd", new Animal());
+
 
         return "animal-add";
     }
@@ -57,7 +58,7 @@ public class WebAnimalController {
         if (bindingResult.hasErrors()) {
             System.out.println("Validation error found!");
             //return new RedirectView("/animal/add");
-            return "redirect:/animal/add";
+            return "animal-add";
         }
         String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
 

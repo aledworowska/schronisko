@@ -197,19 +197,17 @@ div#slider figure {
 }*/
 .addForm{
     background: rgba(0,0,0,.5);
-    border-radius:15px;
-    max-height:100%;
-    padding: 36px 24px;
-    width: 100%;
+    border-radius: 15px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 14vh;
-    max-width: 400px;
+    width: 27vw;
     padding: 40px;
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0,0,0,.6);
     color: white;
     margin-bottom: 25vh;
+    height: 83vh;
 }
 .h1{
       background-color: #333;
@@ -244,7 +242,7 @@ label{
   padding: 0.9vw;
 }
 .button{
-   /* width: 5vw;*/
+   margin-top: 3vh;
 }
 #checkbox{
     position: relative;
@@ -260,12 +258,20 @@ label{
 }
 #reset_button{
     float: left;
-    width: 9.5vw;
+    width: 10vw;
     padding: 1vh;
-    margin-right: 1vw;
+    margin-right: 1.65vw;
 }
 #submit_button{
     float: left;
-    width: 9.5vw;
+    width: 10vw;
     padding: 1vh;
+}
+#cityAdd{
+    height:30vh;
+}
+
+.error{
+    color: #d9646c;
+    font-size: 2vh;
 }

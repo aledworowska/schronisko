@@ -40,7 +40,7 @@ public class WebCityController {
 
         if (bindingResult.hasErrors()) {
             System.out.println("Validation error found!");
-            return "redirect:/city/add";
+            return "city-add";
         }
 
         cityService.addCity(city);

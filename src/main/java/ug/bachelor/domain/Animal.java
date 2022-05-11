@@ -10,6 +10,7 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 
 @Entity
 @Table(name = "animal")
@@ -19,15 +20,20 @@ public class Animal {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id", nullable = false)
     private Long id;
-    @NotEmpty
-    @Size(min=1,max=255)
+
+    @NotEmpty(message = "Name can not be empty!")
+    @Size(min = 1, message = "Name must be at least 1 character!")
+    @Size(max = 20, message = "Name must be less then 20 characters!")
     private String name;
 
     private Sex sex;
-    @NotNull
-    @Range(min=1, max=50)
+
+    @NotNull(message = "Age can not be null!")//to chyba nie działa
+    @Range(min=1, max=50, message ="Age must be withing 1-50" )
     private int age;
-    @Size(min=0,max=255)
+
+
+    @Size(max = 255, message = "Description must be withing 0-255 characters!")
     private String description;
 
     private Species species;

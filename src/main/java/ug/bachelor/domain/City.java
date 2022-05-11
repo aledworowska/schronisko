@@ -3,6 +3,8 @@ import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 
+import javax.validation.constraints.*;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,8 +17,11 @@ public class City {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id" , nullable = false)
     private Long id;
-    @NotEmpty
-    @Size(min=1,max=255)
+
+
+    @NotEmpty(message = "Name can not be empty!")
+    @Size(min = 1, message = "Name must be at least 1 character!")
+    @Size(max = 20, message = "Name must be less then 20 characters!")
     private String name;
 
     @OneToMany(mappedBy = "city", fetch = FetchType.LAZY)

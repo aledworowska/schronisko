@@ -5,17 +5,20 @@
 <body>
     <div th:replace="layout :: html_name"/>
     <header th:replace="layout :: html_menu"/>
-<h2>Edit animal</h2>
 
-<form action="#" method="post" th:action="@{/city}" th:object="${cityToAdd}">
+<div id="cityAdd" class="addForm">
+    <div class="h1">Add city</div>
+    <form action="#" method="post" th:action="@{/city}" th:object="${cityToAdd}">
 
-    <div><label>Name:</label><input type="text" th:field="*{name}"></div>
-    <div th:if="${#fields.hasErrors('name')}" th:errors="*{name}"> Name can't be empty! </div>
-    <div><input type ="submit" th:value="Submit"></div>
-
+    <label><div>Name:</div><input type="text" th:field="*{name}"></label>
+    <div class="error" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"> Name can't be empty! </div>
+        <div class="button">
+            <input id="reset_button" type ="reset" th:value="Reset">
+            <input id="submit_button" type ="submit" th:value="Submit">
+        </div>
 
 
 </form>
-
+</div>
 </body>
 </html>
