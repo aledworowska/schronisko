@@ -14,77 +14,114 @@ import ug.bachelor.domain.enums.AppUserRole;
 
 import javax.persistence.*;
 
-@Getter
-@Setter
-@EqualsAndHashCode
-@NoArgsConstructor
+
+
+
 @Entity
-public class User implements UserDetails {
-
-
-    @SequenceGenerator(
-            name = "user_sequence",
-            sequenceName = "user_sequence",
-            allocationSize = 1
-    )
+@Table(name = "users")
+public class User{
     @Id
-    @GeneratedValue(
-            strategy = GenerationType.SEQUENCE,
-            generator = "user_sequence"
-    )
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(nullable = false, length = 50)
     private String name;
+    @Column(nullable = false, unique = true, length = 50)
     private String userName;
+    @Column(nullable = false, unique = true, length = 50)
     private String email;
+    @Column(nullable = false,  length = 64)
     private String password;
-    @Enumerated(EnumType.STRING)
-    private AppUserRole appUserRole;
-    private Boolean locked;
-    private Boolean enabled;
+//    @Enumerated(EnumType.STRING)
+//    private AppUserRole appUserRole;
+//    private Boolean locked;
+//    private Boolean enabled;
+
+    public User() {
+    }
+
+    public User(Long id, String name, String userName, String email, String password, AppUserRole appUserRole, Boolean locked, Boolean enabled) {
+        this.id = id;
+        this.name = name;
+        this.userName = userName;
+        this.email = email;
+        this.password = password;
+//        this.appUserRole = appUserRole;
+//        this.locked = locked;
+//        this.enabled = enabled;
+    }
 
     public User(String name, String userName, String email, String password, AppUserRole appUserRole, Boolean locked, Boolean enabled) {
         this.name = name;
         this.userName = userName;
         this.email = email;
         this.password = password;
-        this.appUserRole = appUserRole;
-        this.locked = locked;
-        this.enabled = enabled;
+//        this.appUserRole = appUserRole;
+//        this.locked = locked;
+//        this.enabled = enabled;
     }
 
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        SimpleGrantedAuthority authority = new SimpleGrantedAuthority(appUserRole.name());
-        return Collections.singletonList(authority);
+
+    public Long getId() {
+        return id;
     }
 
-    @Override
-    public String getPassword() {
-        return null;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    @Override
-    public String getUsername() {
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getUserName() {
         return userName;
     }
 
-    @Override
-    public boolean isAccountNonExpired() {
-        return true;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
-    @Override
-    public boolean isAccountNonLocked() {
-        return !locked;
+    public String getEmail() {
+        return email;
     }
 
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return true;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
-    @Override
-    public boolean isEnabled() {
-        return enabled;
+    public String getPassword() {
+        return password;
     }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+//
+//    public AppUserRole getAppUserRole() {
+//        return appUserRole;
+//    }
+//
+//    public void setAppUserRole(AppUserRole appUserRole) {
+//        this.appUserRole = appUserRole;
+//    }
+//
+//    public Boolean getLocked() {
+//        return locked;
+//    }
+//
+//    public void setLocked(Boolean locked) {
+//        this.locked = locked;
+//    }
+//
+//    public Boolean getEnabled() {
+//        return enabled;
+//    }
+
+//    public void setEnabled(Boolean enabled) {
+//        this.enabled = enabled;
+//    }
 }

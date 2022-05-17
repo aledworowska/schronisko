@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+>
+<head th:fragment="html_head">
+    <meta charset="UTF-8">
+    <link href="/css/custom.css" rel="stylesheet" type="text/css"/>
+    <!--<style type="text/css" media="all"> @import "css/custom.css"; </style>-->
+    <title>Animal Shelter</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="name" th:fragment="html_name">
+    <div class="title">
+        User Registration
+    </div>
+    <div class="logo">
+        <img class="img" src="/img/SCHRONISKO_LOGO.jpg">
+    </div>
+</div>
+<header th:fragment="html_menu">
+    <div class="topnav">
+        <a class="active" href="/">Main</a>
+        <a href="/animal">Animals</a>
+        <a href="/city">Cities</a>
+        <a href="/about">About</a>
+    </div>
+    <div class="arrow_back">
+        <a href="javascript: history.go(-1)"><img class='icon_image' src="/img/back.png"></a>
+    </div>
+</header>
+
+<form th:action="@{/process_register}" th:object="${user}" method="post">
+        <div class="form-group row">
+            <label class="col-form-label col-4">E-mail</label>
+            <div class="col-8">
+                <input type="email" th:field="*{email}" class="form-control" required />
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-form-label col-4">Password</label>
+            <div class="col-8">
+                <input type="password" th:field="*{password}"  class="form-control" required />
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-form-label col-4">UserName</label>
+            <div class="col-8">
+                <input type="text"  th:field="*{userName}" class="form-control" required />
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-form-label col-4">Name</label>
+            <div class="col-8">
+                <input type="text"  th:field="*{name}" class="form-control"required />
+            </div>
+        </div>
+        <div class="button">
+            <button type="submit" class="btn btn-primary"> Sign up</button>
+        </div>
+    </form>
+
+
+
+</body>
+</html>
