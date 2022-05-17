@@ -51,7 +51,4 @@ public class AnimalService {
     public void deleteAnimal(Animal animal) {
         animalRepository.deleteById(animal.getId());
     }
-
-
-
 }
