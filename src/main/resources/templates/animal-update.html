@@ -8,9 +8,10 @@
 <div><a th:href="@{/animal}">All animals</a></div>
 
 <h2>Edit</h2>
-<form method="post"  th:action="@{/animal/update/} + ${id}" th:object="${animalToUpdate}">
+<form method="post"  th:action="@{/animal/update/} + ${id}" th:object="${animalToUpdate} " enctype="multipart/form-data">
 
     <div><label>Name:</label><input type="text" th:field="*{name}"></div>
+    <div class="error" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
     <div>
         <label>Sex:</label>
         <select name="sex">
@@ -19,7 +20,10 @@
         </select>
     </div>
     <div><label>Age:</label><input type="text" th:field="*{age}"></div>
+    <div class="error" th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></div>
     <div><label>Description:</label><input type="text" th:field="*{description}"></div>
+    <div class="error" th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></div>
+
     <div>
         <label>Species:</label>
         <select name="species">
@@ -28,7 +32,21 @@
         </select>
     </div>
     <div><label>Reserved:</label><input type="checkbox" th:checked="*{isReserved}"></div>
-    <div><input type ="submit" th:value="Submit"></div>
+
+    <label><div id="city" class="form_category">City:
+        <select class="form-control" name="city">
+            <option th:each="city : ${allCities}"
+                    th:value="${city.id}"
+                    th:text="${city.name}">City</option>
+        </select></div></label>
+    <div class="error" th:if="${#fields.hasErrors('city')}" th:errors="*{city}"></div>
+
+    <label><div class="form_category">Obraz:<input id="image" type="file" name="image" accept="image/png, image/jpg" />
+    </div></label>
+    <div class="button">
+        <input id="reset_button" type ="reset" th:value="Reset">
+        <input id="submit_button" type ="submit" th:value="Submit">
+    </div>
 
 </form>
 </body>

@@ -43,6 +43,7 @@ public class Animal {
 
     @ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
     @JoinColumn(name = "city_id", referencedColumnName = "id")
+    @NotNull(message = "You must chose a city.")
     private City city;
 
     @Column(nullable = true, length = 64)

@@ -53,22 +53,20 @@ public class WebAnimalController {
 //    }
 
     @RequestMapping("/animal") //Kopia powyższego kontrollera dla jpg
-    public String addNewAnimal(@ModelAttribute ("animalToAdd") @Valid Animal animal, BindingResult bindingResult , @RequestParam("image") MultipartFile multipartFile) throws IOException {
+    public String addNewAnimal(@ModelAttribute ("animalToAdd") @Valid Animal animal, BindingResult bindingResult , @RequestParam("image") MultipartFile multipartFile, Model model) throws IOException {
 
         if (bindingResult.hasErrors()) {
             System.out.println("Validation error found!");
-            //return new RedirectView("/animal/add");
+            model.addAttribute("allCities", cityService.allCities());
             return "animal-add";
         }
-        String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
 
+        String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
         animal.setPhoto(fileName);
         Animal tempAnimal = animalService.addAnimal(animal);
         String uploadDir = "Animal-photos/" + tempAnimal.getId();
         FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
-        //return new RedirectView("/animal",true);
         return "redirect:/animal";
-
     }
 
     @GetMapping("/animal/delete/{id}")
@@ -81,11 +79,34 @@ public class WebAnimalController {
     public String updateAnimal(@PathVariable("id") long id, Model model){
         Animal animalToUpdate = animalService.getAnimal(id);
         model.addAttribute("animalToUpdate",animalToUpdate);
+        model.addAttribute("allCities", cityService.allCities());
         return "animal-update";
     }
 
-    @PostMapping("/animal/update/{id}")
-    public String updateAnimal(@PathVariable("id") long id, @ModelAttribute("animalToUpdate") Animal animalToUpdate, Model model){
+//    @PostMapping("/animal/update/{id}")
+//    public String updateAnimal(@PathVariable("id") long id, @ModelAttribute("animalToUpdate") Animal animalToUpdate, Model model){
+//        animalService.updateAnimal(animalToUpdate);
+//        return "redirect:/animal";
+//    }
+
+    @RequestMapping("/animal/update/{id}") //Kopia powyższego kontrollera dla jpg
+    public String updateAnimal(@PathVariable("id") long id, @ModelAttribute ("animalToUpdate") @Valid Animal animalToUpdate, BindingResult bindingResult , @RequestParam("image") MultipartFile multipartFile, Model model) throws IOException {
+
+        if (bindingResult.hasErrors()) {
+            System.out.println("Validation error found!");
+            model.addAttribute("allCities", cityService.allCities());
+            return "animal-update";
+        }
+
+
+        String fileName = StringUtils.cleanPath(multipartFile.getOriginalFilename());
+        if( !multipartFile.isEmpty()) {
+            animalToUpdate.setPhoto(fileName);
+            Animal tempAnimal = animalService.addAnimal(animalToUpdate);
+            String uploadDir = "Animal-photos/" + tempAnimal.getId();
+            FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
+            return "redirect:/animal";
+        }
         animalService.updateAnimal(animalToUpdate);
         return "redirect:/animal";
     }

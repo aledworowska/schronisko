@@ -23,7 +23,7 @@
         <label><div class="form_category">Age:</div><input type="text" th:field="*{age}"></label>
         <div class="error" th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></div>
         <label><div class="form_category">Description:</div><input type="text" th:field="*{description}"></label>
-        <div class="error" th:if="${#fields.hasErrors('description')}" th:errors="*{description}"> Description must be withing 0-1024 </div>
+        <div class="error" th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></div>
             <label><div class="form_category">Species:
             <select name="species">
                 <option th:each="speciesOpt : ${T(ug.bachelor.domain.enums.Species).values()}"
@@ -39,6 +39,7 @@
                         th:value="${city.id}"
                         th:text="${city.name}">City</option>
             </select></div></label>
+        <div class="error" th:if="${#fields.hasErrors('city')}" th:errors="*{city}"></div>
 
 
         <label><div class="form_category">Obraz:<input id="image" type="file" name="image" accept="image/png, image/jpg" />

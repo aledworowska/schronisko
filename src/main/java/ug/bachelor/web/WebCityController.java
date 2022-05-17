@@ -36,7 +36,7 @@ public class WebCityController {
     }
 
     @PostMapping("/city")
-    public String addNewCity(@ModelAttribute("allCitiesFromList") @Valid City city, BindingResult bindingResult) {
+    public String addNewCity(@ModelAttribute("cityToAdd") @Valid City city, BindingResult bindingResult) {
 
         if (bindingResult.hasErrors()) {
             System.out.println("Validation error found!");

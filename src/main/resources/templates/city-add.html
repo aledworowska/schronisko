@@ -10,8 +10,10 @@
     <div class="h1">Add city</div>
     <form action="#" method="post" th:action="@{/city}" th:object="${cityToAdd}">
 
-    <label><div>Name:</div><input type="text" th:field="*{name}"></label>
-    <div class="error" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"> Name can't be empty! </div>
+        <label><div class="form_category">Name:</div><input type="text" th:field="*{name}"></label>
+
+        <div class="error" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
+
         <div class="button">
             <input id="reset_button" type ="reset" th:value="Reset">
             <input id="submit_button" type ="submit" th:value="Submit">
