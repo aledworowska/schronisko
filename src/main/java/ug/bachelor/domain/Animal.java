@@ -21,7 +21,6 @@ public class Animal {
     @Column(name = "id", nullable = false)
     private Long id;
 
-    @NotEmpty(message = "Name can not be empty!")
     @Size(min = 1, message = "Name must be at least 1 character!")
     @Size(max = 20, message = "Name must be less then 20 characters!")
     private String name;

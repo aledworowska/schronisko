@@ -68,7 +68,12 @@ public class WebAnimalController {
         FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
         return "redirect:/animal";
     }
-
+    @GetMapping("/animal/{id}")
+    public String animalPage(@PathVariable("id") long id, Model model){
+        Animal animalToShow = animalService.getAnimal(id);
+        model.addAttribute("animal",animalToShow);
+        return "animal-page";
+    }
     @GetMapping("/animal/delete/{id}")
     public String deleteAnimal(@PathVariable("id") long id, Model model) {
         animalService.deleteAnimal(animalService.getAnimal(id));
