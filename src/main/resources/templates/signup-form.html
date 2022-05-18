@@ -8,42 +8,37 @@
 <div th:replace="layout :: html_name"/>
 <header th:replace="layout :: html_menu"/>
 
-
-
+<div id="addUser" class="addForm">
+    <div class="h1">Register</div>
 <form th:action="@{/process_register}" th:object="${user}" method="post">
-        <div class="form-group row">
-            <label class="col-form-label col-4">E-mail</label>
-            <div class="col-8">
-                <input type="email" th:field="*{email}" class="form-control" required />
-            </div>
-        </div>
+    <label>
+        <div class="form_category">E-mail</div>
+        <input type="email" th:field="*{email}" class="form-control" required />
+    </label>
 
-        <div class="form-group row">
-            <label class="col-form-label col-4">Password</label>
-            <div class="col-8">
-                <input type="password" th:field="*{password}"  class="form-control" required />
-            </div>
-        </div>
 
-        <div class="form-group row">
-            <label class="col-form-label col-4">UserName</label>
-            <div class="col-8">
-                <input type="text"  th:field="*{userName}" class="form-control" required />
-            </div>
-        </div>
+    <label>
+        <div class="form_category">Password</div>
+        <input type="password" th:field="*{password}"  class="form-control" required />
+    </label>
 
-        <div class="form-group row">
-            <label class="col-form-label col-4">Name</label>
-            <div class="col-8">
-                <input type="text"  th:field="*{name}" class="form-control"required />
-            </div>
-        </div>
-        <div class="button">
-            <button type="submit" class="btn btn-primary"> Sign up</button>
-        </div>
+    <label>
+        <div class="form_category">UserName</div>
+        <input type="text"  th:field="*{userName}" class="form-control" required />
+    </label>
+
+    <label>
+        <div class="form_category">Name</div>
+        <input type="text"  th:field="*{name}" class="form-control" required />
+    </label>
+
+    <div class="button">
+        <button id="reset_button" type ="reset" >Reset</button>
+        <button id="submit_button" type ="submit" >Sign up</button>
+    </div>
     </form>
 
 
-
+</div>
 </body>
 </html>
