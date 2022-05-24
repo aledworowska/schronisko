@@ -5,37 +5,37 @@
 
 
 <body>
-<div th:replace="layout :: html_name"/>
+<div th:replace="layout :: html_name_admin"/>
 
 
 <div id="addUser" class="addForm">
     <div class="h1">Register</div>
-<form th:action="@{/process_register}" th:object="${user}" method="post">
-    <label>
-        <div class="form_category">E-mail</div>
-        <input type="email" th:field="*{email}" class="form-control" required />
-    </label>
+    <form th:action="@{/process_register}" th:object="${user}" method="post">
+        <label>
+            <div class="form_category">E-mail</div>
+            <input type="email" th:field="*{email}" class="form-control" required />
+        </label>
 
 
-    <label>
-        <div class="form_category">Password</div>
-        <input type="password" th:field="*{password}"  class="form-control" required />
-    </label>
+        <label>
+            <div class="form_category">Password</div>
+            <input type="password" th:field="*{password}"  class="form-control" required />
+        </label>
 
-    <label>
-        <div class="form_category">UserName</div>
-        <input type="text"  th:field="*{userName}" class="form-control" required />
-    </label>
+        <label>
+            <div class="form_category">UserName</div>
+            <input type="text"  th:field="*{userName}" class="form-control" required />
+        </label>
 
-    <label>
-        <div class="form_category">Name</div>
-        <input type="text"  th:field="*{name}" class="form-control" required />
-    </label>
+        <label>
+            <div class="form_category">Name</div>
+            <input type="text"  th:field="*{name}" class="form-control" required />
+        </label>
 
-    <div class="button">
-        <button id="reset_button" type ="reset" >Reset</button>
-        <button id="submit_button" type ="submit" >Sign up</button>
-    </div>
+        <div class="button">
+            <button id="reset_button" type ="reset" >Reset</button>
+            <button id="submit_button" type ="submit" >Sign up</button>
+        </div>
     </form>
 
 

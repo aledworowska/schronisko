@@ -12,24 +12,44 @@
     <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="name" th:fragment="html_name">
-        <div class="title">
-            animal shelter
-        </div>
-        <div class="logo">
-            <img class="img" src="/img/SCHRONISKO_LOGO.jpg">
-        </div>
+<div class="name" th:fragment="html_name">
+    <div class="title">
+        animal shelter
     </div>
-    <header th:fragment="html_menu">
-        <div class="topnav">
-            <a class="active" href="/">Main</a>
-            <a href="/animal">Animals</a>
-            <a href="/city">Cities</a>
-            <a href="/about">About</a>
-        </div>
-        <div class="arrow_back">
-            <a href="javascript: history.go(-1)"><img class='icon_image' src="/img/back.png"></a>
-        </div>
-    </header>
+    <div class="logo">
+        <img class="img" src="/img/SCHRONISKO_LOGO.jpg">
+    </div>
+</div>
+<header th:fragment="html_menu">
+    <div class="topnav">
+        <a class="active" href="/">Main</a>
+        <a href="/animal">Animals</a>
+        <a href="/city">Cities</a>
+        <a href="/about">About</a>
+    </div>
+    <div class="arrow_back">
+        <a href="javascript: history.go(-1)"><img class='icon_image' src="/img/back.png"></a>
+    </div>
+</header>
+
+<div class="name" th:fragment="html_name_admin">
+    <div class="title">
+        animal shelter
+    </div>
+    <div class="logo">
+        <img class="img" src="/img/SCHRONISKO_LOGO.jpg">
+    </div>
+</div>
+<header th:fragment="html_menu_admin">
+    <div class="topnav">
+        <a class="active" href="/admin">Main</a>
+        <a href="/admin/animal">Animals</a>
+        <a href="/admin/city">Cities</a>
+        <a href="/admin/about">About</a>
+    </div>
+    <div class="arrow_back">
+        <a href="javascript: history.go(-1)"><img class='icon_image' src="/img/back.png"></a>
+    </div>
+</header>
 </body>
 </html>

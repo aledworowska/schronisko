@@ -3,51 +3,51 @@
       xmlns:th="http://www.thymeleaf.org">
 <head th:replace="layout :: html_head"/>
 <body>
-    <div th:replace="layout :: html_name"/>
-    <header th:replace="layout :: html_menu"/>
+<div th:replace="layout :: html_name_admin"/>
+<header th:replace="layout :: html_menu_admin"/>
 <div id="animalEdit" class="addForm">
     <div class="h1">Edit animal</div>
-<form method="post"  th:action="@{/animal/update/} + ${id}" th:object="${animalToUpdate} " enctype="multipart/form-data">
+    <form method="post"  th:action="@{/admin/animal/update/} + ${id}" th:object="${animalToUpdate} " enctype="multipart/form-data">
 
-    <label><div class="form_category">Name:</div><input type="text" th:field="*{name}"></label>
-    <div class="error" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
-    <div class="form_category">
-        <label>Sex:
-        <select name="sex">
-            <option th:each="sexOpt : ${T(ug.bachelor.domain.enums.Sex).values()}"
-                    th:value="${sexOpt}" th:text="${sexOpt}"></option>
-        </select></label>
-    </div>
-    <label><div class="form_category">Age:</div><input type="text" th:field="*{age}"></label>
-    <div class="error" th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></div>
-    <label><div class="form_category">Description:</div><input type="text" th:field="*{description}"></label>
-    <div class="error" th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></div>
+        <label><div class="form_category">Name:</div><input type="text" th:field="*{name}"></label>
+        <div class="error" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
+        <div class="form_category">
+            <label>Sex:
+                <select name="sex">
+                    <option th:each="sexOpt : ${T(ug.bachelor.domain.enums.Sex).values()}"
+                            th:value="${sexOpt}" th:text="${sexOpt}"></option>
+                </select></label>
+        </div>
+        <label><div class="form_category">Age:</div><input type="text" th:field="*{age}"></label>
+        <div class="error" th:if="${#fields.hasErrors('age')}" th:errors="*{age}"></div>
+        <label><div class="form_category">Description:</div><input type="text" th:field="*{description}"></label>
+        <div class="error" th:if="${#fields.hasErrors('description')}" th:errors="*{description}"></div>
 
-    <label><div class="form_category">
-        Species:
-        <select name="species">
-            <option th:each="speciesOpt : ${T(ug.bachelor.domain.enums.Species).values()}"
-                    th:value="${speciesOpt}" th:text="${speciesOpt}"></option>
-        </select>
-    </div></label>
-    <label><div class="form_category">Reserved:</div><input id="checkbox" type="checkbox" th:checked="*{isReserved}"></label>
+        <label><div class="form_category">
+            Species:
+            <select name="species">
+                <option th:each="speciesOpt : ${T(ug.bachelor.domain.enums.Species).values()}"
+                        th:value="${speciesOpt}" th:text="${speciesOpt}"></option>
+            </select>
+        </div></label>
+        <label><div class="form_category">Reserved:</div><input id="checkbox" type="checkbox" th:checked="*{isReserved}"></label>
 
-    <label><div id="city" class="form_category">City:
-        <select class="form-control" name="city">
-            <option th:each="city : ${allCities}"
-                    th:value="${city.id}"
-                    th:text="${city.name}">City</option>
-        </select></div></label>
-    <div class="error" th:if="${#fields.hasErrors('city')}" th:errors="*{city}"></div>
+        <label><div id="city" class="form_category">City:
+            <select class="form-control" name="city">
+                <option th:each="city : ${allCities}"
+                        th:value="${city.id}"
+                        th:text="${city.name}">City</option>
+            </select></div></label>
+        <div class="error" th:if="${#fields.hasErrors('city')}" th:errors="*{city}"></div>
 
-    <label><div class="form_category">Obraz:<input id="image" type="file" name="image" accept="image/png, image/jpg" />
-    </div></label>
-    <div class="button">
-        <input id="reset_button" type ="reset" th:value="Reset">
-        <input id="submit_button" type ="submit" th:value="Submit">
-    </div>
+        <label><div class="form_category">Obraz:<input id="image" type="file" name="image" accept="image/png, image/jpg" />
+        </div></label>
+        <div class="button">
+            <input id="reset_button" type ="reset" th:value="Reset">
+            <input id="submit_button" type ="submit" th:value="Submit">
+        </div>
 
-</form>
+    </form>
 
 </div>
 </body>

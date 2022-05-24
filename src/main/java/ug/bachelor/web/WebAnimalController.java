@@ -31,7 +31,7 @@ public class WebAnimalController {
         return "main-menu";
     }
 
-    @GetMapping(value="/admin/")
+    @GetMapping(value="/admin")
     public String Menu_admin(Model model){
         return "admin-menu";
     }
@@ -42,11 +42,16 @@ public class WebAnimalController {
         return "animal-all";
     }
 
-    @GetMapping("/animal/add")
+    @GetMapping("/admin/animal")
+    public String animalsAdmin(Model model){
+        model.addAttribute("allAnimalsFromList", animalService.allAnimals());
+        return "animal-all-admin";
+    }
+
+    @GetMapping("/admin/animal/add")
     public String addNewAnimal(Model model){
         model.addAttribute("allCities", cityService.allCities());
         model.addAttribute("animalToAdd", new Animal());
-
 
         return "animal-add";
     }
@@ -57,7 +62,7 @@ public class WebAnimalController {
 //        return "redirect:/animal";
 //    }
 
-    @RequestMapping("/animal") //Kopia powyższego kontrollera dla jpg
+    @RequestMapping("/admin/animal") //Kopia powyższego kontrollera dla jpg
     public String addNewAnimal(@ModelAttribute ("animalToAdd") @Valid Animal animal, BindingResult bindingResult , @RequestParam("image") MultipartFile multipartFile, Model model) throws IOException {
 
         if (bindingResult.hasErrors()) {
@@ -71,7 +76,7 @@ public class WebAnimalController {
         Animal tempAnimal = animalService.addAnimal(animal);
         String uploadDir = "Animal-photos/" + tempAnimal.getId();
         FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
-        return "redirect:/animal";
+        return "redirect:/admin/animal";
     }
     @GetMapping("/animal/{id}")
     public String animalPage(@PathVariable("id") long id, Model model){
@@ -79,13 +84,13 @@ public class WebAnimalController {
         model.addAttribute("animal",animalToShow);
         return "animal-page";
     }
-    @GetMapping("/animal/delete/{id}")
+    @GetMapping("/admin/animal/delete/{id}")
     public String deleteAnimal(@PathVariable("id") long id, Model model) {
         animalService.deleteAnimal(animalService.getAnimal(id));
         model.addAttribute("allAnimals",animalService.allAnimals());
-        return "redirect:/animal";
+        return "redirect:/admin/animal";
     }
-    @GetMapping("/animal/update/{id}")
+    @GetMapping("/admin/animal/update/{id}")
     public String updateAnimal(@PathVariable("id") long id, Model model){
         Animal animalToUpdate = animalService.getAnimal(id);
         model.addAttribute("animalToUpdate",animalToUpdate);
@@ -99,7 +104,7 @@ public class WebAnimalController {
 //        return "redirect:/animal";
 //    }
 
-    @RequestMapping("/animal/update/{id}") //Kopia powyższego kontrollera dla jpg
+    @RequestMapping("/admin/animal/update/{id}") //Kopia powyższego kontrollera dla jpg
     public String updateAnimal(@PathVariable("id") long id, @ModelAttribute ("animalToUpdate") @Valid Animal animalToUpdate, BindingResult bindingResult , @RequestParam("image") MultipartFile multipartFile, Model model) throws IOException {
 
         if (bindingResult.hasErrors()) {
@@ -115,10 +120,10 @@ public class WebAnimalController {
             Animal tempAnimal = animalService.addAnimal(animalToUpdate);
             String uploadDir = "Animal-photos/" + tempAnimal.getId();
             FileUploadUtil.saveFile(uploadDir, fileName, multipartFile);
-            return "redirect:/animal";
+            return "redirect:/admin/animal";
         }
         animalService.updateAnimal(animalToUpdate);
-        return "redirect:/animal";
+        return "redirect:/admin/animal";
     }
 
 }

@@ -7,7 +7,7 @@
 <body>
     <div th:replace="layout :: html_name"/>
     <header th:replace="layout :: html_menu"/>
-<div><a th:href="@{/city/add}">Add city</a></div>
+
 
 <table>
     <thead>
@@ -18,8 +18,6 @@
     <tbody>
         <tr th:each="city : ${allCitiesFromList}">
             <td><a type="button" th:href="@{/city/{id}(id=${city.id})}"><div th:text="${city.name}"></div></a></td>
-            <td><a type="button"  th:href="@{/city/update/{id}(id=${city.id})}">Edit</a></td>
-            <td><a type="button"  th:href="@{/city/delete/{id}(id=${city.id})}">Delete</a></td>
             <td></td>
         </tr>
     </tbody>

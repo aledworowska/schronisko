@@ -3,11 +3,11 @@
       xmlns:th="http://www.thymeleaf.org">
 <head th:replace="layout :: html_head"/>
 <body>
-    <div th:replace="layout :: html_name"/>
-    <header th:replace="layout :: html_menu"/>
+<div th:replace="layout :: html_name_admin"/>
+<header th:replace="layout :: html_menu_admin"/>
 <div id="cityAdd" class="addForm">
     <div class="h1">Edit city</div>
-    <form method="post"  th:action="@{/city/update/} + ${id}" th:object="${cityToUpdate}">
+    <form method="post"  th:action="@{/admin/city/update/} + ${id}" th:object="${cityToUpdate}">
 
         <label><div class="form_category">Name:</div><input type="text" th:field="*{name}"></label>
         <div class="error" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
@@ -15,7 +15,7 @@
             <input id="submit_button_city" type ="submit" th:value="Submit">
         </div>
 
-</form>
+    </form>
 </div>
 </body>
 </html>

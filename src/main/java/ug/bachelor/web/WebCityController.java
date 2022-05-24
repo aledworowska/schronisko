@@ -25,12 +25,16 @@ public class WebCityController {
         this.animalService = animalService;
     }
 
-
-
     @GetMapping("/city")
     public String cities(Model model){
         model.addAttribute("allCitiesFromList", cityService.allCities());
         return "city-all";
+    }
+
+    @GetMapping("/admin/city")
+    public String citiesAdmin(Model model){
+        model.addAttribute("allCitiesFromList", cityService.allCities());
+        return "city-all-admin";
     }
 
     @GetMapping("/city/{id}")
@@ -39,14 +43,21 @@ public class WebCityController {
         model.addAttribute("city", cityService.getCity(id));
         return "animals-from-city";
     }
+    @GetMapping("/admin/city/{id}")
+    public String animalsFromCityAdmin(@PathVariable("id") long id,Model model){
+        model.addAttribute("animalsFromCity", cityService.getAnimalFromCity(id));
+        model.addAttribute("city", cityService.getCity(id));
+        return "animals-from-city-admin";
+    }
 
-    @GetMapping("/city/add")
+
+    @GetMapping("/admin/city/add")
     public String addNewCity(Model model){
         model.addAttribute("cityToAdd", new City());
         return "city-add";
     }
 
-    @PostMapping("/city")
+    @PostMapping("/admin/city")
     public String addNewCity(@ModelAttribute("cityToAdd") @Valid City city, BindingResult bindingResult) {
 
         if (bindingResult.hasErrors()) {
@@ -55,31 +66,31 @@ public class WebCityController {
         }
 
         cityService.addCity(city);
-        return "redirect:/city";
+        return "redirect:/admin/city";
     }
 
-    @GetMapping("/city/delete/{id}")
+    @GetMapping("/admin/city/delete/{id}")
     public String deleteCity(@PathVariable("id") long id, Model model) {
         cityService.deleteCity(cityService.getCity(id));
         model.addAttribute("allCities",cityService.allCities());
-        return "redirect:/city";
+        return "redirect:/admin/city";
     }
-    @GetMapping("/city/update/{id}")
+    @GetMapping("/admin/city/update/{id}")
     public String updateCity(@PathVariable("id") long id, Model model){
         City cityToUpdate = cityService.getCity(id);
         model.addAttribute("cityToUpdate",cityToUpdate);
         return "city-update";
     }
 
-    @PostMapping("/city/update/{id}")
+    @PostMapping("/admin/city/update/{id}")
     public String updateCity(@PathVariable("id") long id, @ModelAttribute("cityToUpdate") @Valid City cityToUpdate,BindingResult bindingResult, Model model){
         if(bindingResult.hasErrors()){
             System.out.println("Validation error found!");
-            return "redirect:/city/update/{id}";
+            return "redirect:/admin/city/update/{id}";
         }
 
         cityService.updateCity(cityToUpdate);
-        return "redirect:/city";
+        return "redirect:/admin/city";
     }
 
     //view all animals from city
