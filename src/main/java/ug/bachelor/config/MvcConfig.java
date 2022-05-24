@@ -1,4 +1,4 @@
-package ug.bachelor;
+package ug.bachelor.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
