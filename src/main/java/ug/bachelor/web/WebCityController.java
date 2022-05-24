@@ -8,18 +8,22 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import ug.bachelor.domain.City;
+import ug.bachelor.service.AnimalService;
 import ug.bachelor.service.CityService;
 
-import javax.naming.Binding;
 import javax.validation.Valid;
 
 
 @Controller
 public class WebCityController {
     private final CityService cityService;
+    private final AnimalService animalService;
 
 
-    public WebCityController(CityService cityService) {this.cityService = cityService;}
+    public WebCityController(CityService cityService, AnimalService animalService) {
+        this.cityService = cityService;
+        this.animalService = animalService;
+    }
 
 
 
@@ -27,6 +31,13 @@ public class WebCityController {
     public String cities(Model model){
         model.addAttribute("allCitiesFromList", cityService.allCities());
         return "city-all";
+    }
+
+    @GetMapping("/city/{id}")
+    public String animalsFromCity(@PathVariable("id") long id,Model model){
+        model.addAttribute("animalsFromCity", cityService.getAnimalFromCity(id));
+        model.addAttribute("city", cityService.getCity(id));
+        return "animals-from-city";
     }
 
     @GetMapping("/city/add")

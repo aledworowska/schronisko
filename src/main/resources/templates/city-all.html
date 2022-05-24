@@ -17,7 +17,7 @@
     </thead>
     <tbody>
         <tr th:each="city : ${allCitiesFromList}">
-            <td th:text="${city.name}"></td>
+            <td><a type="button" th:href="@{/city/{id}(id=${city.id})}"><div th:text="${city.name}"></div></a></td>
             <td><a type="button"  th:href="@{/city/update/{id}(id=${city.id})}">Edit</a></td>
             <td><a type="button"  th:href="@{/city/delete/{id}(id=${city.id})}">Delete</a></td>
             <td></td>

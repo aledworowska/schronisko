@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: html_head"/>
+
+
+<body>
+<div th:replace="layout :: html_name"/>
+<header th:replace="layout :: html_menu"/>
+
+      <div class="CityName" th:text="${city.name}"></div>
+  <div class="content">
+  <div class="animal-box" th:each="animal : ${animalsFromCity}">
+    <div class="animal_image" > <img id="photo" th:src="@{${animal.photosImagePath}}" alt="animal image"></div>
+      <div class="animal_data">
+        <div class="data_line"><div class="data_title">name: </div><div class="data" th:text="${animal.name}"></div></div>
+        <div class="data_line"><div class="data_title">sex: </div><div class="data" th:text="${animal.sex}"></div></div>
+        <div class="data_line"><div class="data_title">age: </div><div class="data" th:text="${animal.age}"></div></div>
+        <div class="data_line"><div class="data_title">species: </div><div class="data" th:text="${animal.species}"></div></div>
+        <div class="data_line"><div class="data_title">city: </div><div class="data" th:text="${animal.city.name}"></div></div>
+        <div class="data_line"><div class="data_title">is reserved: </div><div class="data" th:text="${animal.isReserved}"></div></div>
+        <div class="data_line"><div class="data_title">description: </div><div class="data" th:text="${animal.description}"></div></div>
+      </div>
+    </div>
+  </div>
+</table>
+
+
+</body>
+</html>

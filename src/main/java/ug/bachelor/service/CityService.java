@@ -5,9 +5,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import ug.bachelor.domain.Animal;
 import ug.bachelor.domain.City;
+import ug.bachelor.repository.AnimalRepository;
 import ug.bachelor.repository.CityRepository;
 
 import javax.transaction.Transactional;
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -15,10 +17,14 @@ import java.util.List;
 @Transactional
 public class CityService {
     private final CityRepository cityRepository;
+    private final AnimalRepository animalRepository;
 
 
     @Autowired
-    public CityService(CityRepository cityRepository) {this.cityRepository = cityRepository; }
+    public CityService(CityRepository cityRepository, AnimalRepository animalRepository) {
+        this.cityRepository = cityRepository;
+        this.animalRepository = animalRepository;
+    }
 
     public Iterable<City> allCities() { return cityRepository.findAll(); }
 
@@ -36,5 +42,19 @@ public class CityService {
     }
 
     public void deleteCity(City city) { cityRepository.deleteById(city.getId());}
+
+    public List<Animal> getAnimalFromCity( long id){
+        Iterable<Animal> animalList;
+        animalList = animalRepository.findAll();
+        List<Animal> filteredList = new ArrayList<>();
+
+
+        for (Animal animal : animalList) {
+            if(animal.getCity() == getCity(id) )
+                filteredList.add(animal);
+        }
+
+        return filteredList;
+    }
 
 }
