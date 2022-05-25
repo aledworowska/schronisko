@@ -28,8 +28,28 @@
         <a href="/about">About</a>
     </div>
     <div class="arrow_back">
+        <a href="/login"><img class='icon_image' id="icon_image_user_options" src="/img/locked-user-64.png"></a>
+    </div>
+    <div class="arrow_back">
         <a href="javascript: history.go(-1)"><img class='icon_image' src="/img/back.png"></a>
     </div>
+
+    <div class="dropdown">
+        <a href="#">IKONA</a>
+        <ul>
+            <li><a href="/login">log in</a></li>
+            <li><a href="/register">register</a></li>
+        </ul>
+    </div>
+
+
+
+
+    <!--<ul>
+            <li><a href="/login">Log in</a></li>
+            <li><a href="/register">Register</a></li>
+        </ul>-->
+
 </header>
 
 <div class="name" th:fragment="html_name_admin">
@@ -48,8 +68,18 @@
         <a href="/admin/about">About</a>
     </div>
     <div class="arrow_back">
-        <a href="javascript: history.go(-1)"><img class='icon_image' src="/img/back.png"></a>
+        <form th:action="@{/logout}" method="post">
+            <input type=image  class='icon_image' src="/img/icons8-logout-60.png" alt="logout">
+            <!--<input type="submit" value="" style="background-image: url('img/icons8-logout-60.png'); border:none; background-repeat:no-repeat;background-size:100% 100%;">
+        -->
+        </form>
     </div>
+    <div class="arrow_back">
+        <div th:action="@{/logout}"><img class='icon_image' src="/img/back.png"></div>
+    </div>
+    <!--<form th:action="@{/logout}" method="post">
+        <input type="submit" value="Sign out"/>
+    </form>-->
 </header>
 </body>
 </html>

@@ -21,7 +21,7 @@ header{
    width:80vw;
 }
 .topnav {
-    width: 72.6vw;
+    width: 67.6vw;
     float: left;
     padding: 1.9vh 1.2vw;
 }
@@ -72,6 +72,7 @@ header{
 div#slider {
     overflow: hidden;
     clear: both;
+    margin-top: 9vh;
 }
 div#slider figure img { width: 20%;  }
 div#slider figure {
@@ -307,4 +308,25 @@ label{
 .information a {
   color: white;
   text-decoration: none;
+}
+
+ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    height: 2vh;
+}
+ul > li {
+    background: red;
+    position: relative;
+    z-index: 100;
+    border-top: 1px dashed #751b1b;
+    display: none;
+
+}
+ul > li: hover {
+    background: #c34f4f;
+}
+#icon_image_user_options :hover > ul{
+    display: block;
 }
