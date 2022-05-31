@@ -1,5 +1,8 @@
 package ug.bachelor.web;
 
+import org.springframework.security.authentication.AnonymousAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
@@ -8,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.view.RedirectView;
 import ug.bachelor.domain.Animal;
+import ug.bachelor.domain.User;
 import ug.bachelor.service.AnimalService;
 import ug.bachelor.service.CityService;
 
@@ -31,10 +35,17 @@ public class WebAnimalController {
         return "main-menu";
     }
 
+    @GetMapping(value="/contact") public String Contact(){return "contact";}
+    @GetMapping(value="/admin/contact") public String ContactAdmin(){return "contact-admin";}
+
     @GetMapping(value="/admin")
     public String Menu_admin(Model model){
         return "admin-menu";
     }
+
+
+
+
 
     @GetMapping("/animal")
     public String animals(Model model){
@@ -125,5 +136,7 @@ public class WebAnimalController {
         animalService.updateAnimal(animalToUpdate);
         return "redirect:/admin/animal";
     }
+
+
 
 }

@@ -17,6 +17,9 @@ header{
    width:80vw;
    margin-bottom: -12.2vh;
 }
+a {
+ text-decoration: none;
+}
 .topnav {
     background-color: #333;
     width: 67.6vw;
@@ -113,6 +116,9 @@ text-decoration: none;
 #usericon{
     margin-top: 0.7vh;
 }
+#usericon2{
+    margin-top: 0.7vh;
+}
 /*
 @keyframes slidy {
 0% { left: 0%; }
@@ -181,10 +187,13 @@ div#slider figure {
     margin-bottom: 10px;
 }
 .nav{
-    text-align: center;
-    font-size: 6vh;
-    margin-top: 11vh;
-    margin-bottom: 4vh;
+   text-align: center;
+   font-size: 6vh;
+   margin-top: 11vh;
+   margin-bottom: 1vh;
+}
+#nav_city{
+   margin-top: 0vh;
 }
 .content{
     display: flex;
@@ -204,6 +213,7 @@ div#slider figure {
     margin-right: auto;
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    margin-top: 3vh;
 
 }
 .animal_image{
@@ -216,6 +226,9 @@ div#slider figure {
     margin-left: 0.5vw;
     float: left;
 }
+#animal_data_user{
+    width: 20.6vw;
+}
 .options{
     width: 3vw;
     height: 18vw;
@@ -224,9 +237,23 @@ div#slider figure {
     flex-wrap: wrap;
     justify-content: center;
 }
+.options_city{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 .edit-icon{
     width: 2vw;
     height: 2vw;
+}
+.option-edit-city{
+    width: 2vw;
+    height: 2vw;
+    margin-top: 0.4vh;
+    padding: 1.7vh;
+    padding-right: 1.7vh;
+    margin-right: 1vw;
+    padding-right: 0.2vh;
 }
 .delete-icon{
     width: 2vw;
@@ -242,8 +269,13 @@ div#slider figure {
     height: 2vw;
     margin-bottom: 13vh;
 }
-.options a:hover {
-    background-color: #5c5a5a;
+
+.option-delete-city{
+    width: 2vw;
+    height: 2vw;
+    padding: 1.7vh;
+    padding-left: 1.7vh;
+    padding-left: 0.2vh;
 }
 .data_title{
     float: left;
@@ -252,6 +284,40 @@ div#slider figure {
 .data{}
 .data_line{
     margin-top: 1vh;
+}
+.data_line_city{
+    width: 9vw;
+    padding: 1.5vh;
+    font-size: 4vh;
+    text-align: center;
+}
+.data_line_city a{
+    color: black;
+}
+#data_line_city_user{
+    width: 17vw;
+}
+
+
+.city-box{
+   border-width: 0.13vw;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: center;
+   color: black;
+   background: rgba(0,0,0,.5);
+   border-radius: 15px;
+   margin-left: auto;
+   margin-right: auto;
+   box-sizing: border-box;
+   box-shadow: 0 15px 25px rgba(0,0,0,.6);
+   margin-top: 3vh;
+
+}
+.cityName{
+   font-size: 7vh;
+   text-align: center;
+   margin-top: 11vh;
 }
 /*.addForm{
     background-color: #6b6b6b;
@@ -388,6 +454,56 @@ label{
     margin-right: auto;
     margin-top: 12vh;
     margin-bottom: 4vh;
-    font-size: 2.8vh;,
+    font-size: 2.8vh;
     text-align: center;
+}
+.succesfull_registration{
+    text-align: center;
+}
+.succesfull_registration a{
+    color: black;
+}
+#found_home_information{
+   color: white;
+   text-align: center;
+   font-size: 3vh;
+   background-color: #333;
+   padding: 1vh;
+}
+h1{
+    text-align: center;
+    margin-top: 11vh;
+}
+
+#contact1{
+    text-align: center;
+}
+#lokalizacja{
+}
+#lokalizacja_image{
+    width: 73%;
+    float: left;
+}
+#contact2{
+
+    text-align: center;
+    margin-top: 8vh;
+    width: 55vw;
+    margin-bottom: -1vh;
+
+}
+h2{
+
+}
+#contact3{
+
+}
+#contact4{
+margin-left: 60vw;
+font-size: 3.5vh;
+text-align: center;
+margin-top: 12vh;
+}
+#body_contact{
+    height: 125vh;
 }

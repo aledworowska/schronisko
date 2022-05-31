@@ -13,7 +13,7 @@
     <div class="animal-box" th:each="animal : ${allAnimalsFromList}">
         <!--<a th:href="@{/animal/{id}(id=${animal.id})}">-->
         <div class="animal_image" > <img id="photo" th:src="@{${animal.photosImagePath}}" alt="animal image"></div>
-        <div class="animal_data">
+        <div class="animal_data" id="animal_data_user">
             <div class="data_line"><div class="data_title">name: </div><div class="data" th:text="${animal.name}"></div></div>
             <div class="data_line"><div class="data_title">sex: </div><div class="data" th:text="${animal.sex}"></div></div>
             <div class="data_line"><div class="data_title">age: </div><div class="data" th:text="${animal.age}"></div></div>

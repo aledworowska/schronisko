@@ -9,22 +9,16 @@
 <header th:replace="layout :: html_menu_admin"/>
 <div><a th:href="@{/admin/city/add}">Add city</a></div>
 
-<table>
-    <thead>
-    <tr>
-        <td>City name</td>
-    </tr>
-    </thead>
-    <tbody>
-        <tr th:each="city : ${allCitiesFromList}">
-            <td><a type="button" th:href="@{/admin/city/{id}(id=${city.id})}"><div th:text="${city.name}"></div></a></td>
-            <td><a type="button"  th:href="@{/admin/city/update/{id}(id=${city.id})}">Edit</a></td>
-            <td><a type="button"  th:href="@{/admin/city/delete/{id}(id=${city.id})}">Delete</a></td>
-            <td></td>
-        </tr>
-    </tbody>
-</table>
+<div class="nav">All cities</div>
+<div class="content">
+    <div class="city-box" th:each="city : ${allCitiesFromList}">
+        <div class="data_line_city"><a type="button" th:href="@{/admin/city/{id}(id=${city.id})}"><div class="data" th:text="${city.name}"></div></a></div>
+        <div class="options_city" >
+            <div class="option-edit-city"><a type="button"  th:href="@{/admin/city/update/{id}(id=${city.id})}"><img class="edit-icon" src="/img/edit-icon.jpg"></a></div>
+            <div class="option-delete-city"><a type="button"  th:href="@{/admin/city/delete/{id}(id=${city.id})}"><img class="delete-icon" src="/img/icons8.png"></a></div>
+        </div>
+    </div>
 
-
+</div>
 </body>
 </html>

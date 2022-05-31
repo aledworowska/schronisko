@@ -10,26 +10,15 @@
 
     <div class="cities_description"><k>The animals from our database are located in various cities in Poland, beneath is list of these cities.</k><br>
         <k>You can click on them and see animals in particular city.</k></div>
-<table>
-    <thead>
-    <tr>
-        <td>City name</td>
-    </tr>
-    </thead>
-    <tbody>
-        <tr th:each="city : ${allCitiesFromList}">
-            <td><a type="button" th:href="@{/city/{id}(id=${city.id})}"><div th:text="${city.name}"></div></a></td>
-            <td></td>
-        </tr>
-    </tbody>
-</table>
 
+    <div class="nav" id="nav_city">All cities</div>
     <div class="content">
-        <div class="cities-box" th:each="city : ${allCitiesFromList}">
-            <a type="button" th:href="@{/city/{id}(id=${city.id})}"><div th:text="${city.name}"></div></a>
-        </div>
-    </div>
+        <div class="city-box" th:each="city : ${allCitiesFromList}">
+            <div class="data_line_city" id="data_line_city_user"><a type="button" th:href="@{/city/{id}(id=${city.id})}"><div class="data" th:text="${city.name}"></div></a></div>
 
+        </div>
+
+    </div>
 
 </body>
 </html>
