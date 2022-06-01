@@ -7,11 +7,11 @@
 <body>
 <div th:replace="layout :: html_name_admin"/>
 <header th:replace="layout :: html_menu_admin"/>
-<!--<a href="/">Back to main page</a>-->
+
 <div class="nav">All animals from shelter</div>
 <div class="content">
     <div class="animal-box" th:each="animal : ${allAnimalsFromList}">
-        <!--<a th:href="@{/animal/{id}(id=${animal.id})}">-->
+
         <div class="animal_image" > <img id="photo" th:src="@{${animal.photosImagePath}}" alt="animal image"></div>
         <div class="animal_data">
             <div class="data_line"><div class="data_title">name: </div><div class="data" th:text="${animal.name}"></div></div>
@@ -26,12 +26,8 @@
             <div class="option-edit"><a type="button"  th:href="@{/admin/animal/update/{id}(id=${animal.id})}"><img class="edit-icon" src="/img/edit-icon.jpg"></a></div>
             <div class="option-delete"><a type="button"  th:href="@{/admin/animal/delete/{id}(id=${animal.id})}"><img class="delete-icon" src="/img/icons8.png"></a></div>
         </div>
-        <!--</a>-->
+
     </div>
 </div>
-
-<br>
-<div><a th:href="@{/admin/animal/add}">Add animal</a></div>
-
 </body>
 </html>

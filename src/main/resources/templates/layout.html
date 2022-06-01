@@ -20,8 +20,8 @@
         <img class="img" src="/img/SCHRONISKO_LOGO.jpg">
     </div>
 </div>
-<header th:fragment="html_menu">
-    <div class="topnav">
+<header  th:fragment="html_menu">
+    <div class="topnav_user">
         <a class="active" href="/">Main</a>
         <a href="/animal">Animals</a>
         <a href="/city">Cities</a>
@@ -50,7 +50,42 @@
         <img class="img" src="/img/SCHRONISKO_LOGO.jpg">
     </div>
 </div>
+<!--------------------------------------------------------------------------------------------------------------->
 <header th:fragment="html_menu_admin">
+    <div class="topnav">
+        <ol>
+            <li><a href="/admin">Main</a></li>
+            <li><a href="#">Animals</a>
+                <ul>
+                    <li><a href="/admin/animal">show all</a></li>
+                    <li><a href="/admin/animal/add">add animal</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Cities</a>
+                <ul>
+                    <li><a href="/admin/city">show all</a></li>
+                    <li><a href="/admin/city/add">add city</a></li>
+                </ul>
+            </li>
+            <li><a href="/admin/contact">Contact</a></li>
+        </ol>
+    </div>
+    <div class="topnavright">
+        <ol>
+            <li><a href="#"><img id="usericon2" src="/img/icons8-user-50.png"></a>
+                <ul>
+                    <li><a th:href="@{/logout}">logout</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="javascript: history.go(-1)"><img src="/img/back.png"></a>
+            </li>
+        </ol>
+    </div>
+
+</header>
+<!--------------------------------------------------------------------------------------------------------------->
+<!---<header th:fragment="html_menu_admin">
     <div class="topnav">
         <a class="active" href="/admin">Main</a>
         <a href="/admin/animal">Animals</a>
@@ -70,6 +105,6 @@
         </ol>
     </div>
 
-</header>
+</header>---->
 </body>
 </html>

@@ -20,12 +20,12 @@ header{
 a {
  text-decoration: none;
 }
+/*
 .topnav {
-    background-color: #333;
-    width: 67.6vw;
-    float: left;
-    padding: 1.9vh 1.2vw;
-    height: 4vh;
+   background-color: #333;
+   width: 67.6vw;
+   float: left;
+   height: 8vh;
 }
 .topnav a {
   color: #f2f2f2;
@@ -38,7 +38,7 @@ a {
   background-color: #545353;
   color: black;
 }
-
+*/
 .topnavright {
     background-color: #333;
    /* width: 10vw;*/
@@ -46,37 +46,37 @@ a {
     text-align: center;
     height: 7.8vh;
 }
-ol{
+.topnavright > ol{
     padding:0;
     margin:0;
     list-style-type:none;
 
 }
-ol a{
+.topnavright > ol a{
     color: #f2f2f2;
     text-decoration: none;
     display: block;
     height: 7.8vh;
 }
-ol > li{
+.topnavright > ol > li{
     float:left;
-    width: 5.002vw;
+    width: 5vw;
 }
-ol > li :hover {
+.topnavright > ol > li :hover {
      background-color: #545353;
 }
-ol > li > ul{
+.topnavright > ol > li > ul{
      padding:0;
      margin:0;
      list-style-type:none;
      display: none;
 
 }
-ol > li:hover >ul{
+.topnavright > ol > li:hover >ul{
      display: block;
 }
 
-ol > li > ul > li{
+.topnavright > ol > li > ul > li{
     background-color: #333;
     position: relative;
     z-index: 100;
@@ -85,12 +85,168 @@ ol > li > ul > li{
     font-size: 2.5vh;
 
 }
-ol > li > ul > li a{
+.topnavright > ol > li > ul > li a{
     height: 3.5vh;
 }
-ol > li > ul > li:hover{
+.topnavright > ol > li > ul > li:hover{
     background-color: #545353;
 }
+/************************************************************************************************************/
+.topnav {
+    background-color: #333;
+    width: 70vw;
+    float: left;
+    text-align: center;
+    height: 7.8vh;
+    /*! padding: 1.2vh 1.9vh; */
+    font-size: 4.5vh;
+}
+.topnav > ol{
+    padding:0;
+    margin:0;
+    list-style-type:none;
+    line-height: 170%;
+
+}
+.topnav > ol a{
+    color: #f2f2f2;
+    text-decoration: none;
+    display: block;
+    height: 7.8vh;
+    /*! padding: 1.2vh 1.9vh; */
+}
+.topnav > ol > li{
+    float:left;
+    width: 9vw;
+    height: 7.8vh;
+    /*! font-size: 4.5vh; */
+    /*! padding: 1.2vh 1.9vh; */
+}
+.topnav > ol > li :hover {
+     background-color: #545353;
+     color: black;
+    /* width: 9vw;*/
+     /* height: 7.8vh;*/
+}
+.topnav > ol > li > ul{
+     padding:0;
+     margin:0;
+     list-style-type:none;
+     display: none;
+
+}
+.topnav > ol > li:hover >ul{
+     display: block;
+}
+
+.topnav > ol > li > ul > li{
+    background-color: #333;
+    position: relative;
+    z-index: 100;
+    height: 3.5vh;
+    padding: 1vh;
+    font-size: 2.5vh;
+    line-height: 170%;
+}
+.topnav > ol > li > ul > li a{
+    height: 3.5vh;
+}
+.topnav > ol > li > ul > li:hover{
+    background-color: #545353;
+}
+
+
+.topnav_user {
+    width: 67.6vw;
+    float: left;
+    padding: 1.9vh 1.2vw;
+    background-color: #333;
+}
+.topnav_user a {
+  color: #f2f2f2;
+  text-align: center;
+  padding: 1.9vh 1.2vw;
+  text-decoration: none;
+  font-size: 4vh;
+}
+.topnav_user a:hover {
+  background-color: #545353;
+  color: black;
+}
+/*
+.topnav > ol{
+    padding:0;
+    margin:0;
+    list-style-type:none;
+    height: 7.8vh;
+    font-size: 2.5vh;
+    font-size: 3.5vh;
+    display: inline_block;
+}
+
+.topnav > ol a{
+    color: #f2f2f2;
+    text-decoration: none;
+    display: block;
+}
+.topnav > ol > li {
+    float:left;
+    width: 10vw;
+    height: 7.8vh;
+}
+.topnav > ol > li : hover{
+    background-color #545353;;
+}*/
+/*
+
+.topnav > ol{
+    padding:0;
+    margin:0;
+    list-style-type:none;
+
+}
+.topnav > ol a{
+    color: #f2f2f2;
+    text-decoration: none;
+    display: block;
+}
+.topnav > ol > li{
+    float:left;
+    width: 8.0vw;
+}
+.topnav > ol > li :hover {
+     background-color: #545353;
+}
+.topnav > ol > li > ul{
+     padding:0;
+     margin:0;
+     list-style-type:none;
+     display: none;
+
+}
+.topnav > ol > li:hover >ul{
+     display: block;
+}
+
+.topnav > ol > li > ul > li{
+    background-color: #333;
+    position: relative;
+    z-index: 100;
+    height: 2.5vh;
+    padding: 0.5vh;
+    font-size: 2.5vh;
+
+}
+.topnav > ol > li > ul > li a{
+    height: 3.5vh;
+}
+.topnav > ol > li > ul > li:hover{
+    background-color: #545353;
+}*/
+
+
+
+
 /*
 .topnavright a {
   color: #f2f2f2;
