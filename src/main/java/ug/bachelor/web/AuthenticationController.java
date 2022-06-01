@@ -29,7 +29,7 @@ public class AuthenticationController {
 
     @GetMapping("/logout")
     public String logout(){
-        return "redirect:/";
+        return "main-menu";
     }
 
     @GetMapping("/register")
@@ -54,7 +54,7 @@ public class AuthenticationController {
         if(authentication == null || authentication instanceof AnonymousAuthenticationToken){
             return "login";
         }
-        return "redirect:/";
+        return "login";
     }
 
 
