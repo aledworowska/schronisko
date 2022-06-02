@@ -43,10 +43,6 @@ public class WebAnimalController {
         return "admin-menu";
     }
 
-
-
-
-
     @GetMapping("/animal")
     public String animals(Model model){
         model.addAttribute("allAnimalsFromList", animalService.allAnimals());

@@ -27,8 +27,8 @@
         <div class="data_line"><div class="data_title">species: </div><div class="data" th:text="${animal.species}"></div></div>
         <div class="data_line"><div class="data_title">city: </div><div class="data" th:text="${animal.city.name}"></div></div>
         <div class="data_line"><div class="data_title">is reserved: </div><div class="data" th:text="${animal.isReserved}"></div></div>
-        <div class="data_line"><div class="data_title">description: </div><div class="data" th:text="${animal.description}"></div></div>
-        <div class="data_line"><div class="data_title">contact number: </div><div class="data" th:text="${animal.city.number}"></div></div>
+        <div class="data_line"><div class="data_title">description: </div><div class="data" th:text="${animal.description}"></div></div><br>
+        <div class="data_line"><div class="data_title">contact number: </div><div class="data" th:text="${animal.city.phone}"></div></div>
       </div>
     <div class="options" >
       <div class="option-edit"><a type="button"  th:href="@{/admin/animal/update/{id}(id=${animal.id})}"><img class="edit-icon" src="/img/edit-icon.jpg"></a></div>
