@@ -157,10 +157,12 @@ a {
 
 
 .topnav_user {
-    width: 67.6vw;
+    width: 70vw;
     float: left;
-    padding: 1.9vh 1.2vw;
     background-color: #333;
+    height: 7.8vh;
+    font-size: 4.5vh;
+
 }
 .topnav_user a {
   color: #f2f2f2;
@@ -168,6 +170,7 @@ a {
   padding: 1.9vh 1.2vw;
   text-decoration: none;
   font-size: 4vh;
+  line-height: 182%;
 }
 .topnav_user a:hover {
   background-color: #545353;
@@ -470,24 +473,32 @@ div#slider figure {
    margin-top: 3vh;
 
 }
-.cityName{
-   font-size: 7vh;
+.cityInformations{
    text-align: center;
    margin-top: 11vh;
+   width: 31vw;
+   margin-left: auto;
+   margin-right: auto;
 }
-/*.addForm{
-    background-color: #6b6b6b;
-    border: solid;
-    width: 35vw;
-    height: 55vh;
-    border-color: #333;
-    margin-left: auto;
-    margin-right: auto;
-    border-width: 0.7vh;
-    border-radius: 5vh;
-    margin-top: 14vh;
-    box-shadow: 0px 8px 24px 0 rgba(255,255,255,0.05) ;
-}*/
+#cityName{
+   font-size: 7vh;
+}
+.cityContact{
+   font-size: 4vh;
+   text-align: left;
+   width: 55vw;
+}
+.cityContactTitle{
+   font-size: 3.5vh;
+   float: left;
+   width: 12vw;
+   text-align: end;
+   margin-left: 2vw;
+   margin-right: 1vw;
+}
+.cityData{
+
+}
 .addForm{
     background: rgba(0,0,0,.5);
     border-radius: 15px;
@@ -569,7 +580,7 @@ label{
     padding: 1vh;
 }
 #cityAdd{
-    height: 35vh;
+    height: 56vh;
 }
 
 .error{

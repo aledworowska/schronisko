@@ -8,7 +8,12 @@
 <div th:replace="layout :: html_name"/>
 <header th:replace="layout :: html_menu"/>
 
-      <div class="cityName" th:text="${city.name}"></div>
+  <div class="cityInformations">
+      <div id="cityName" th:text="${city.name}"></div>
+    <div class="cityData"><div class="cityContactTitle">Address: </div><div class="cityContact" th:text="${city.address}"></div></div>
+    <div class="cityData"><div class="cityContactTitle">Contact number: </div><div class="cityContact" th:text="${city.phone}"></div></div>
+  </div>
+
   <div class="content">
   <div class="animal-box" th:each="animal : ${animalsFromCity}">
     <div class="animal_image" > <img id="photo" th:src="@{${animal.photosImagePath}}" alt="animal image"></div>
