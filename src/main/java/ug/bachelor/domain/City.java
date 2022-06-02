@@ -23,6 +23,12 @@ public class City {
     @Size(max = 55, message = "Name must be less then 55 characters!")
     private String name;
 
+
+    private String address;
+
+    @Pattern(regexp = "^(?=.*\\d).{9,12}$", message = "Not valid phone number!")
+    private String phone;
+
     @OneToMany(mappedBy = "city", fetch = FetchType.LAZY)
     private List<Animal> animalsList;
 
@@ -30,8 +36,11 @@ public class City {
     public City() {
     }
 
-    public City(String name) {
+    public City(String name, String address, String phone) {
+
         this.name = name;
+        this.address = address;
+        this.phone = phone;
     }
 
 
@@ -47,6 +56,10 @@ public class City {
         return name;
     }
 
+    public String getAddress() { return address; }
+
+    public String getPhone() { return phone; }
+
     public void setName(String name) {
         this.name = name;
     }
@@ -54,6 +67,10 @@ public class City {
     public List<Animal> getAnimalsList() {
         return animalsList;
     }
+
+    public void setAddress(String address) {this.address = address;}
+
+    public void setPhone(String phone) {this.phone = phone;}
 
     public void setAnimalsList(List<Animal> animalsList) {
         this.animalsList = animalsList;

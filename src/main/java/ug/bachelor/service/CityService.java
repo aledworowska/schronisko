@@ -36,6 +36,8 @@ public class CityService {
 
         City cityToUpdate = cityRepository.findById( city.getId()).orElse(null);
         cityToUpdate.setName(city.getName());
+        cityToUpdate.setAddress(city.getAddress());
+        cityToUpdate.setPhone(city.getPhone());
         cityToUpdate.setAnimalsList(city.getAnimalsList());
 
         return cityRepository.save(cityToUpdate);

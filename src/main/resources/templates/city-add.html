@@ -11,8 +11,15 @@
     <form action="#" method="post" th:action="@{/admin/city}" th:object="${cityToAdd}">
 
         <label><div class="form_category">Name:</div><input type="text" th:field="*{name}"></label>
-
         <div class="error" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"></div>
+
+        <label><div class="form_category">Address:</div><input type="text" th:field="*{address}"></label>
+        <div class="error" th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></div>
+
+        <label><div class="form_category">Phone:</div><input type="text" th:field="*{phone}"></label>
+        <div class="error" th:if="${#fields.hasErrors('phone')}" th:errors="*{phone}"></div>
+
+
 
         <div class="button">
             <input id="reset_button" type ="reset" th:value="Reset">

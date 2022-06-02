@@ -14,7 +14,12 @@
     <div class="nav" id="nav_city">All cities</div>
     <div class="content">
         <div class="city-box" th:each="city : ${allCitiesFromList}">
-            <div class="data_line_city" id="data_line_city_user"><a type="button" th:href="@{/city/{id}(id=${city.id})}"><div class="data" th:text="${city.name}"></div></a></div>
+            <div class="data_line_city" id="data_line_city_user">
+                <a type="button" th:href="@{/city/{id}(id=${city.id})}">
+                <div class="data" th:text="${city.name}"></div>
+                <div class="data" th:text="${city.address}"></div>
+                <div class="data" th:text="${city.phone}"></div>
+            </a></div>
 
         </div>
 
