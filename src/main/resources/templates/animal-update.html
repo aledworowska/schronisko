@@ -30,7 +30,7 @@
                         th:value="${speciesOpt}" th:text="${speciesOpt}"></option>
             </select>
         </div></label>
-        <label><div class="form_category">Reserved:</div><input id="checkbox" type="checkbox" th:checked="*{isReserved}"></label>
+        <label><div class="form_category">Reserved:</div><input id="checkbox" type="checkbox" th:field="*{reserved}"></label>
 
         <label><div id="city" class="form_category">City:
             <select class="form-control" name="city">

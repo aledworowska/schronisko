@@ -373,11 +373,13 @@ div#slider figure {
     box-sizing: border-box;
     box-shadow: 0 15px 25px rgba(0,0,0,.6);
     margin-top: 3vh;
+    height: 40vh;
 
 }
 .animal_image{
     width: 18vw;
     height: 18vw;
+    margin-top: 4vh;
 }
 .animal_data{
     width: 17.3vw;
@@ -387,6 +389,7 @@ div#slider figure {
 }
 #animal_data_user{
     width: 20.6vw;
+    margin-top: 1vh;
 }
 .options{
     width: 3vw;

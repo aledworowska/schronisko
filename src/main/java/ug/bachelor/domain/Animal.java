@@ -6,11 +6,8 @@ import ug.bachelor.domain.enums.Species;
 
 
 import javax.persistence.*;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import javax.validation.constraints.*;
 
 @Entity
 @Table(name = "animal")
@@ -37,7 +34,7 @@ public class Animal {
 
     private Species species;
 
-    private boolean isReserved;
+    private boolean reserved;
 
 
     @ManyToOne(cascade = CascadeType.MERGE, fetch = FetchType.EAGER)
@@ -66,7 +63,7 @@ public class Animal {
 
     public Species getSpecies() {return species;}
 
-    public boolean isReserved() {return isReserved;}
+    public boolean isReserved() {return reserved;}
 
     public City getCity() {
         return city;
@@ -83,7 +80,8 @@ public class Animal {
 
     public void setSpecies(Species species) {this.species = species;}
 
-    public void setReserved(boolean reserved) {isReserved = reserved;}
+    public void setReserved(boolean reserved) {
+        this.reserved = reserved;}
 
     public void setCity(City city) {
         this.city = city;
@@ -97,25 +95,25 @@ public class Animal {
         this.photo = photo;
     }
 
-    public Animal(Long id, String name, Sex sex, int age, String description, Species species, boolean isReserved, String photo, City city) {
+    public Animal(Long id, String name, Sex sex, int age, String description, Species species, boolean reserved, String photo, City city) {
         this.id = id;
         this.name = name;
         this.sex = sex;
         this.age = age;
         this.description = description;
         this.species = species;
-        this.isReserved = isReserved;
+        this.reserved = reserved;
         this.photo = photo;
         this.city=city;
     }
 
-    public Animal(String name, Sex sex, int age, String description, Species species, boolean isReserved, String photo, City city) {
+    public Animal(String name, Sex sex, int age, String description, Species species, boolean reserved, String photo, City city) {
         this.name = name;
         this.sex = sex;
         this.age = age;
         this.description = description;
         this.species = species;
-        this.isReserved = isReserved;
+        this.reserved = reserved;
         this.photo = photo;
         this.city=city;
     }
