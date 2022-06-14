@@ -10,7 +10,6 @@ body {
   text-decoration: none;
 }
 header{
- /*background-color: #333;*/
    height: 20vh;
    overflow: hidden;
    float: left;
@@ -20,28 +19,9 @@ header{
 a {
  text-decoration: none;
 }
-/*
-.topnav {
-   background-color: #333;
-   width: 67.6vw;
-   float: left;
-   height: 8vh;
-}
-.topnav a {
-  color: #f2f2f2;
-  text-align: center;
-  padding: 1.9vh 1.2vw;
-  text-decoration: none;
-  font-size: 3.5vh;
-}
-.topnav a:hover {
-  background-color: #545353;
-  color: black;
-}
-*/
+
 .topnavright {
     background-color: #333;
-   /* width: 10vw;*/
     float: left;
     text-align: center;
     height: 7.8vh;
@@ -58,12 +38,19 @@ a {
     display: block;
     height: 7.8vh;
 }
+.back{
+    color: #f2f2f2;
+    text-decoration: none;
+    display: block;
+    height: 7.8vh;
+}
 .topnavright > ol > li{
     float:left;
     width: 5vw;
 }
 .topnavright > ol > li :hover {
      background-color: #545353;
+     cursor: pointer;
 }
 .topnavright > ol > li > ul{
      padding:0;
@@ -91,14 +78,13 @@ a {
 .topnavright > ol > li > ul > li:hover{
     background-color: #545353;
 }
-/************************************************************************************************************/
+
 .topnav {
     background-color: #333;
     width: 70vw;
     float: left;
     text-align: center;
     height: 7.8vh;
-    /*! padding: 1.2vh 1.9vh; */
     font-size: 4.5vh;
 }
 .topnav > ol{
@@ -113,20 +99,16 @@ a {
     text-decoration: none;
     display: block;
     height: 7.8vh;
-    /*! padding: 1.2vh 1.9vh; */
 }
 .topnav > ol > li{
     float:left;
     width: 9vw;
     height: 7.8vh;
-    /*! font-size: 4.5vh; */
-    /*! padding: 1.2vh 1.9vh; */
+
 }
 .topnav > ol > li :hover {
      background-color: #545353;
      color: black;
-    /* width: 9vw;*/
-     /* height: 7.8vh;*/
 }
 .topnav > ol > li > ul{
      padding:0;
@@ -176,102 +158,7 @@ a {
   background-color: #545353;
   color: black;
 }
-/*
-.topnav > ol{
-    padding:0;
-    margin:0;
-    list-style-type:none;
-    height: 7.8vh;
-    font-size: 2.5vh;
-    font-size: 3.5vh;
-    display: inline_block;
-}
 
-.topnav > ol a{
-    color: #f2f2f2;
-    text-decoration: none;
-    display: block;
-}
-.topnav > ol > li {
-    float:left;
-    width: 10vw;
-    height: 7.8vh;
-}
-.topnav > ol > li : hover{
-    background-color #545353;;
-}*/
-/*
-
-.topnav > ol{
-    padding:0;
-    margin:0;
-    list-style-type:none;
-
-}
-.topnav > ol a{
-    color: #f2f2f2;
-    text-decoration: none;
-    display: block;
-}
-.topnav > ol > li{
-    float:left;
-    width: 8.0vw;
-}
-.topnav > ol > li :hover {
-     background-color: #545353;
-}
-.topnav > ol > li > ul{
-     padding:0;
-     margin:0;
-     list-style-type:none;
-     display: none;
-
-}
-.topnav > ol > li:hover >ul{
-     display: block;
-}
-
-.topnav > ol > li > ul > li{
-    background-color: #333;
-    position: relative;
-    z-index: 100;
-    height: 2.5vh;
-    padding: 0.5vh;
-    font-size: 2.5vh;
-
-}
-.topnav > ol > li > ul > li a{
-    height: 3.5vh;
-}
-.topnav > ol > li > ul > li:hover{
-    background-color: #545353;
-}*/
-
-
-
-
-/*
-.topnavright a {
-  color: #f2f2f2;
-  text-decoration: none;
-  font-size: 1vh;
-}*/
-/*
-.arrow_back {
-      width: 5vw;
-      float: left;
-      height: 8.3vh;
-}
-
-.arrow_back a {
-text-decoration: none;
-    width: 5vw;
-    float: left;
-    height: 8.3vh;
-}
-.arrow_back a:hover {
-    background-color: #545353;
-}*/
 #usericon{
     margin-top: 0.7vh;
 }
@@ -288,28 +175,7 @@ text-decoration: none;
 72% { left: -200%; }
 78% { left: -300%; }
 100% { left: -300%; }
-}/*
-@keyframes slidy {
-0% { left: 0%; }
-24% { left: 0%; }
-34% { left: -100%; }
-66% { left: -100%; }
-76% { left: -200%; }
-100% { left: -200%; }
-
-
-@keyframes slidy {
-0% { left: 0%; }
-20% { left: 0%; }
-25% { left: -100%; }
-45% { left: -100%; }
-50% { left: -200%; }
-70% { left: -200%; }
-75% { left: -300%; }
-95% { left: -300%; }
-100% { left: -400%; }
 }
-}*/
 
 div#slider {
     overflow: hidden;
@@ -371,7 +237,6 @@ div#slider figure {
     justify-content: center;
 }
 .animal-box{
-    /*border-style: dotted;*/
     border-width: 0.13vw;
     display: flex;
     flex-wrap: wrap;
@@ -528,7 +393,6 @@ div#slider figure {
     height: 84vh;
 }
 .h1{
-      /*background-color: #333;*/
       background-color: #5c5e5e;
       color: white;
       padding: 10px 9px 10px 9px;
