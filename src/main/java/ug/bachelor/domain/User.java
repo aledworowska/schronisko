@@ -39,25 +39,20 @@ public class User{
     public User() {
     }
 
-    public User(Long id, String name, String userName, String email, String password, AppUserRole appUserRole, Boolean locked, Boolean enabled) {
+
+    public User(Long id, String name, String userName, String email, String password) {
         this.id = id;
         this.name = name;
         this.userName = userName;
         this.email = email;
         this.password = password;
-//        this.appUserRole = appUserRole;
-//        this.locked = locked;
-//        this.enabled = enabled;
     }
 
-    public User(String name, String userName, String email, String password, AppUserRole appUserRole, Boolean locked, Boolean enabled) {
+    public User(String name, String userName, String email, String password) {
         this.name = name;
         this.userName = userName;
         this.email = email;
         this.password = password;
-//        this.appUserRole = appUserRole;
-//        this.locked = locked;
-//        this.enabled = enabled;
     }
 
 
