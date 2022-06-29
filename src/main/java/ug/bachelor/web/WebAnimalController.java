@@ -1,19 +1,16 @@
 package ug.bachelor.web;
 
-import org.springframework.security.authentication.AnonymousAuthenticationToken;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.servlet.view.RedirectView;
 import ug.bachelor.domain.Animal;
-import ug.bachelor.domain.User;
 import ug.bachelor.service.AnimalService;
 import ug.bachelor.service.CityService;
+import ug.bachelor.service.FileUploadUtil;
+import ug.bachelor.service.FileUploadUtil;
 
 import javax.validation.Valid;
 import java.io.IOException;

@@ -24,7 +24,7 @@ public class Animal {
 
     private Sex sex;
 
-    @NotNull(message = "Age can not be null!")//to chyba nie działa
+    @NotNull(message = "Age can not be null!")
     @Range(min=1, max=50, message ="Age must be withing 1-50" )
     private int age;
 

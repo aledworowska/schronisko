@@ -14,7 +14,6 @@
   <div class="cityData"><div class="cityContactTitle">Contact number: </div><div class="cityContact" th:text="${city.phone}"></div></div>
   <div class="options_city" >
     <div class="option-edit-city"><a type="button"  th:href="@{/admin/city/update/{id}(id=${city.id})}"><img class="edit-icon" src="/img/edit-icon.jpg"></a></div>
-    <div class="option-delete-city"><a type="button"  th:href="@{/admin/city/delete/{id}(id=${city.id})}"><img class="delete-icon" src="/img/icons8.png"></a></div>
   </div>
 </div>
   <div class="content">

@@ -1,4 +1,4 @@
-package ug.bachelor.web;
+package ug.bachelor.service;
 
 import java.io.*;
 import java.nio.file.*;

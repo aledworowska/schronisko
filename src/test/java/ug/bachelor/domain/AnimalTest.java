@@ -34,7 +34,6 @@ public class AnimalTest {
         testCity.setName("updateName");
         testCity.setAddress("updateAddress");
         testCity.setPhone("987654321");
-
         testAnimal.setId(2L);
         testAnimal.setName("updateName");
         testAnimal.setSex(Sex.MALE);
