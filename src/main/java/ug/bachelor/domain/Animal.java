@@ -125,26 +125,5 @@ public class Animal {
         return "/Animal-photos/" + id + "/" + photo;
     }
 
-//
-//    public Animal(Long id, String name, Sex sex, int age, String description, Species species, boolean isReserved) {
-//        this.id = id;
-//        this.name = name;
-//        this.sex = sex;
-//        this.age = age;
-//        this.description = description;
-//        this.species = species;
-//        this.isReserved = isReserved;
-//    }
-//
-//    public Animal(String name, Sex sex, int age, String description, Species species, boolean isReserved, City city  ) {
-//        this.name = name;
-//        this.sex = sex;
-//        this.age = age;
-//        this.description = description;
-//        this.species = species;
-//        this.isReserved = isReserved;
-//        this.city = city;
-//    }
-
 
 }

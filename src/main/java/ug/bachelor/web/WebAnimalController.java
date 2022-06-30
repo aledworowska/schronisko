@@ -60,12 +60,6 @@ public class WebAnimalController {
         return "animal-add";
     }
 
-//    @PostMapping("/animal")
-//    public String addNewAnimal(@ModelAttribute("allAnimalsFromList") Animal animal)  {
-//        animalService.addAnimal(animal);
-//        return "redirect:/animal";
-//    }
-
     @RequestMapping("/admin/animal") //Kopia powyższego kontrollera dla jpg
     public String addNewAnimal(@ModelAttribute ("animalToAdd") @Valid Animal animal, BindingResult bindingResult , @RequestParam("image") MultipartFile multipartFile, Model model) throws IOException {
 

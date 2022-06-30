@@ -94,28 +94,5 @@ public class User{
     public void setPassword(String password) {
         this.password = password;
     }
-//
-//    public AppUserRole getAppUserRole() {
-//        return appUserRole;
-//    }
-//
-//    public void setAppUserRole(AppUserRole appUserRole) {
-//        this.appUserRole = appUserRole;
-//    }
-//
-//    public Boolean getLocked() {
-//        return locked;
-//    }
-//
-//    public void setLocked(Boolean locked) {
-//        this.locked = locked;
-//    }
-//
-//    public Boolean getEnabled() {
-//        return enabled;
-//    }
 
-//    public void setEnabled(Boolean enabled) {
-//        this.enabled = enabled;
-//    }
 }
